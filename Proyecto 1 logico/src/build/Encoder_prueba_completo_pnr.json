@@ -1,0 +1,2628 @@
+{
+  "creator": "Next Generation Place and Route (Version nextpnr-0.5-34-ga93f49eb)",
+  "modules": {
+    "top": {
+      "settings": {
+        "route": "00000000000000000000000000000001",
+        "router/tmg_ripup": "0 ",
+        "router1/useEstimate": "1 ",
+        "router1/fullCleanupReroute": "1 ",
+        "router1/cleanupReroute": "1 ",
+        "router1/maxIterCnt": "200",
+        "place": "00000000000000000000000000000001",
+        "placer1/startTemp": "1.000000",
+        "placer1/budgetBased": "0 ",
+        "placer1/minBelsForGridPick": "64",
+        "placer1/netShareWeight": "0.000000",
+        "placer1/constraintWeight": "10.000000",
+        "placerHeap/cellPlacementTimeout": "8",
+        "placerHeap/netShareWeight": "0.000000",
+        "placerHeap/parallelRefine": "0 ",
+        "pack": "00000000000000000000000000000001",
+        "cst": "00000000000000000000000000000001",
+        "synth": "00000000000000000000000000000001",
+        "placerHeap/timingWeight": "10 ",
+        "placerHeap/criticalityExponent": "2",
+        "placerHeap/beta": "0.900000",
+        "placerHeap/alpha": "0.100000",
+        "seed": "01010011010110001001011110010011",
+        "arch.type": "none",
+        "arch.name": "ARCHNAME",
+        "router": "router1",
+        "placer": "heap",
+        "auto_freq": "00000000000000000000000000000000",
+        "slack_redist_iter": "00000000000000000000000000000000",
+        "timing_driven": "00000000000000000000000000000001",
+        "target_freq": "27000000.000000",
+        "arch.enable-auto-longwires": "00000000000000000000000000000000",
+        "arch.enable-globals": "00000000000000000000000000000001"
+      },
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "../design/module_top.sv:1.1-63.10"
+      },
+      "ports": {
+        "pos_error_pi": {
+          "direction": "input",
+          "bits": [ 3877671, 518381344, 3877667 ]
+        },
+        "codigo_gray_pi": {
+          "direction": "input",
+          "bits": [ 3877664, 3877662, 551542336, 518381344 ]
+        },
+        "codigo_bin_led_p0": {
+          "direction": "output",
+          "bits": [ 3877639, 3877637, 3877635, 3877633 ]
+        },
+        "catodo_trans": {
+          "direction": "output",
+          "bits": [ 518381344, 3877629, 3877626, 3877623, 3877620, 3877617, 3877614 ]
+        },
+        "catodo_p0": {
+          "direction": "output",
+          "bits": [ 3877611, 3877608, 3877605, 3877602, 3877599, 3877596, 3877593 ]
+        },
+        "button": {
+          "direction": "input",
+          "bits": [ 3877463 ]
+        },
+        "anodo_p1": {
+          "direction": "output",
+          "bits": [ 3877462 ]
+        },
+        "anodo_p0": {
+          "direction": "output",
+          "bits": [ 3877461 ]
+        }
+      },
+      "cells": {
+        "display_transmision.hex_output_LUT3_F_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "00000001"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R2C41_SLICE4",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:143.23-144.37"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877613 ],
+            "CLK": [  ],
+            "D": [  ],
+            "C": [ 3877539 ],
+            "B": [ 3877549 ],
+            "A": [ 3877532 ]
+          }
+        },
+        "display_transmision.hex_output_MUX2_LUT5_O_I0_LUT4_F_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "0101000001011100"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R3C33_SLICE0",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:152.41-152.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877653 ],
+            "CLK": [  ],
+            "D": [ 3877539 ],
+            "C": [ 3877532 ],
+            "B": [ 3877549 ],
+            "A": [ 3877537 ]
+          }
+        },
+        "button_IBUF_I_O_LUT4_I1_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "0000110011001110"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R3C21_SLICE7",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:153.41-153.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877529 ],
+            "CLK": [  ],
+            "D": [ 3877521 ],
+            "C": [ 3877481 ],
+            "B": [ 3877479 ],
+            "A": [ 3877525 ]
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_I0_LUT1_F_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "00"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R3C21_SLICE6",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:152.41-152.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877531 ],
+            "CLK": [  ],
+            "D": [  ],
+            "C": [  ],
+            "B": [  ],
+            "A": [  ]
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I0_MUX2_LUT6_O_I0_MUX2_LUT5_O_I0_LUT3_F_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "10101000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R4C22_SLICE6",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:164.41-164.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:158.41-158.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:152.41-152.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877556 ],
+            "CLK": [  ],
+            "D": [  ],
+            "C": [ 3877567 ],
+            "B": [ 3877521 ],
+            "A": [ 3877481 ]
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I0_MUX2_LUT6_O_I0_MUX2_LUT5_O_I1_LUT3_F_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "11101100"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R4C22_SLICE7",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:164.41-164.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:158.41-158.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:153.41-153.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877557 ],
+            "CLK": [  ],
+            "D": [  ],
+            "C": [ 3877567 ],
+            "B": [ 3877521 ],
+            "A": [ 3877481 ]
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I0_MUX2_LUT6_O_I1_MUX2_LUT5_O_I0_LUT4_F_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "1101111010101000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R4C22_SLICE4",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:164.41-164.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:159.41-159.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:152.41-152.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877574 ],
+            "CLK": [  ],
+            "D": [ 3877525 ],
+            "C": [ 3877567 ],
+            "B": [ 3877521 ],
+            "A": [ 3877481 ]
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I0_MUX2_LUT6_O_I1_MUX2_LUT5_O_I1_LUT4_F_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "1000101111101100"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R4C22_SLICE5",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:164.41-164.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:159.41-159.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:153.41-153.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877575 ],
+            "CLK": [  ],
+            "D": [ 3877525 ],
+            "C": [ 3877567 ],
+            "B": [ 3877521 ],
+            "A": [ 3877481 ]
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_I0_MUX2_LUT5_O_I0_LUT4_F_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "1100111010111001"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R4C22_SLICE2",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:165.42-165.67|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:158.41-158.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:152.41-152.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877582 ],
+            "CLK": [  ],
+            "D": [ 3877525 ],
+            "C": [ 3877567 ],
+            "B": [ 3877521 ],
+            "A": [ 3877481 ]
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_I0_MUX2_LUT5_O_I1_LUT4_F_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "1000101011111101"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R4C22_SLICE3",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:165.42-165.67|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:158.41-158.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:153.41-153.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877583 ],
+            "CLK": [  ],
+            "D": [ 3877525 ],
+            "C": [ 3877567 ],
+            "B": [ 3877521 ],
+            "A": [ 3877481 ]
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_I1_MUX2_LUT5_O_I0_LUT4_F_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "1010100110111001"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R4C22_SLICE0",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:165.42-165.67|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:159.41-159.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:152.41-152.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877587 ],
+            "CLK": [  ],
+            "D": [ 3877525 ],
+            "C": [ 3877567 ],
+            "B": [ 3877521 ],
+            "A": [ 3877481 ]
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_I1_MUX2_LUT5_O_I1_LUT4_F_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "1111110011111101"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R4C22_SLICE1",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:165.42-165.67|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:159.41-159.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:153.41-153.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877588 ],
+            "CLK": [  ],
+            "D": [ 3877525 ],
+            "C": [ 3877567 ],
+            "B": [ 3877521 ],
+            "A": [ 3877481 ]
+          }
+        },
+        "display_entrada.hex_output_LUT4_F_4_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "1101000000000100"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R15C46_SLICE0",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877604 ],
+            "CLK": [  ],
+            "D": [ 3877567 ],
+            "C": [ 3877559 ],
+            "B": [ 3877549 ],
+            "A": [ 3877539 ]
+          }
+        },
+        "display_transmision.hex_output_LUT2_F_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "1110"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R2C37_SLICE6",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:139.23-140.26"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877628 ],
+            "CLK": [  ],
+            "D": [  ],
+            "C": [  ],
+            "B": [ 3877559 ],
+            "A": [ 3877532 ]
+          }
+        },
+        "display_transmision.hex_output_LUT4_F_1_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "0000011100000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R2C39_SLICE1",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877619 ],
+            "CLK": [  ],
+            "D": [ 3877539 ],
+            "C": [ 3877532 ],
+            "B": [ 3877549 ],
+            "A": [ 3877559 ]
+          }
+        },
+        "display_entrada.hex_output_LUT4_F_2_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "0101011100010000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R14C46_SLICE5",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877598 ],
+            "CLK": [  ],
+            "D": [ 3877539 ],
+            "C": [ 3877559 ],
+            "B": [ 3877549 ],
+            "A": [ 3877567 ]
+          }
+        },
+        "display_transmision.hex_output_LUT4_F_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "0001000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R2C39_SLICE4",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877616 ],
+            "CLK": [  ],
+            "D": [ 3877539 ],
+            "C": [ 3877549 ],
+            "B": [ 3877559 ],
+            "A": [ 3877532 ]
+          }
+        },
+        "display_entrada.hex_output_LUT4_F_3_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "1100000100011000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R14C46_SLICE1",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877601 ],
+            "CLK": [  ],
+            "D": [ 3877539 ],
+            "C": [ 3877559 ],
+            "B": [ 3877549 ],
+            "A": [ 3877567 ]
+          }
+        },
+        "display_transmision.hex_output_MUX2_LUT5_O_I1_LUT4_F_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "0101110001010000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R3C33_SLICE1",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:153.41-153.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877654 ],
+            "CLK": [  ],
+            "D": [ 3877539 ],
+            "C": [ 3877532 ],
+            "B": [ 3877549 ],
+            "A": [ 3877537 ]
+          }
+        },
+        "display_entrada.hex_output_LUT4_F_5_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "1001100011100000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R15C46_SLICE3",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877607 ],
+            "CLK": [  ],
+            "D": [ 3877539 ],
+            "C": [ 3877559 ],
+            "B": [ 3877549 ],
+            "A": [ 3877567 ]
+          }
+        },
+        "display_entrada.hex_output_LUT4_F_1_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "0100000010110010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R13C46_SLICE0",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877595 ],
+            "CLK": [  ],
+            "D": [ 3877567 ],
+            "C": [ 3877539 ],
+            "B": [ 3877559 ],
+            "A": [ 3877549 ]
+          }
+        },
+        "display_entrada.hex_output_LUT4_F_6_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "0100100100010000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R17C46_SLICE0",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877610 ],
+            "CLK": [  ],
+            "D": [ 3877539 ],
+            "C": [ 3877559 ],
+            "B": [ 3877567 ],
+            "A": [ 3877549 ]
+          }
+        },
+        "display_transmision.hex_output_LUT4_F_2_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "1110101110101010"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R2C38_SLICE3",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877625 ],
+            "CLK": [  ],
+            "D": [ 3877559 ],
+            "C": [ 3877539 ],
+            "B": [ 3877549 ],
+            "A": [ 3877532 ]
+          }
+        },
+        "display_entrada.hex_output_LUT4_F_LC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "0010010000000011"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R2C42_SLICE6",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:147.23-148.48"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877592 ],
+            "CLK": [  ],
+            "D": [ 3877559 ],
+            "C": [ 3877549 ],
+            "B": [ 3877567 ],
+            "A": [ 3877539 ]
+          }
+        },
+        "encoder.x3_IBUF_O$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000000",
+            "INPUT_USED": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R29C8_IOBA",
+            "src": "../design/module_top.sv:2.24-2.38",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=DOWN": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [ 3877567 ],
+            "OEN": [  ],
+            "I": [  ],
+            "PAD": [  ]
+          }
+        },
+        "encoder.x5_IBUF_O$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000000",
+            "INPUT_USED": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R29C8_IOBB",
+            "src": "../design/module_top.sv:2.24-2.38",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=DOWN": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [ 3877559 ],
+            "OEN": [  ],
+            "I": [  ],
+            "PAD": [  ]
+          }
+        },
+        "encoder.x6_IBUF_O$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000000",
+            "INPUT_USED": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R29C13_IOBA",
+            "src": "../design/module_top.sv:2.24-2.38",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=DOWN": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [ 3877549 ],
+            "OEN": [  ],
+            "I": [  ],
+            "PAD": [  ]
+          }
+        },
+        "encoder.x7_IBUF_O$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000000",
+            "INPUT_USED": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R29C11_IOBB",
+            "src": "../design/module_top.sv:2.24-2.38",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=DOWN": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [ 3877539 ],
+            "OEN": [  ],
+            "I": [  ],
+            "PAD": [  ]
+          }
+        },
+        "error_injector.error_position_IBUF_O$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000000",
+            "INPUT_USED": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R29C13_IOBB",
+            "src": "../design/module_top.sv:3.24-3.36",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=DOWN": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [ 3877481 ],
+            "OEN": [  ],
+            "I": [  ],
+            "PAD": [  ]
+          }
+        },
+        "error_injector.error_position_IBUF_O_1$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000000",
+            "INPUT_USED": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R29C23_IOBA",
+            "src": "../design/module_top.sv:3.24-3.36",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=DOWN": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [ 3877521 ],
+            "OEN": [  ],
+            "I": [  ],
+            "PAD": [  ]
+          }
+        },
+        "error_injector.error_position_IBUF_O_2$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000000",
+            "INPUT_USED": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R29C23_IOBB",
+            "src": "../design/module_top.sv:3.24-3.36",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001",
+            "&PULL_MODE=DOWN": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [ 3877525 ],
+            "OEN": [  ],
+            "I": [  ],
+            "PAD": [  ]
+          }
+        },
+        "codigo_bin_led_p0_OBUF_O_3$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R15C1_IOBA",
+            "src": "../design/module_top.sv:15.24-15.41",
+            "&IO_TYPE=LVCMOS18": "00000000000000000000000000000001",
+            "&PULL_MODE=DOWN": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877539 ],
+            "PAD": [  ]
+          }
+        },
+        "codigo_bin_led_p0_OBUF_O_2$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R16C1_IOBB",
+            "src": "../design/module_top.sv:15.24-15.41",
+            "&IO_TYPE=LVCMOS18": "00000000000000000000000000000001",
+            "&PULL_MODE=DOWN": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877549 ],
+            "PAD": [  ]
+          }
+        },
+        "$PACKER_VCC": {
+          "hide_name": 1,
+          "type": "VCC",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "VCC"
+          },
+          "port_directions": {
+            "V": "output"
+          },
+          "connections": {
+            "V": [ 3877688 ]
+          }
+        },
+        "codigo_bin_led_p0_OBUF_O_1$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R21C1_IOBB",
+            "src": "../design/module_top.sv:15.24-15.41",
+            "&IO_TYPE=LVCMOS18": "00000000000000000000000000000001",
+            "&PULL_MODE=DOWN": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877559 ],
+            "PAD": [  ]
+          }
+        },
+        "codigo_bin_led_p0_OBUF_O$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R22C1_IOBB",
+            "src": "../design/module_top.sv:15.24-15.41",
+            "&IO_TYPE=LVCMOS18": "00000000000000000000000000000001",
+            "&PULL_MODE=DOWN": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877567 ],
+            "PAD": [  ]
+          }
+        },
+        "catodo_trans_OBUF_O_6$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R1C37_IOBA",
+            "src": "../design/module_top.sv:11.24-11.36",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877686 ],
+            "PAD": [  ]
+          }
+        },
+        "catodo_trans_OBUF_O_5$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R1C37_IOBB",
+            "src": "../design/module_top.sv:11.24-11.36",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877628 ],
+            "PAD": [  ]
+          }
+        },
+        "catodo_trans_OBUF_O_4$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R1C38_IOBA",
+            "src": "../design/module_top.sv:11.24-11.36",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877625 ],
+            "PAD": [  ]
+          }
+        },
+        "catodo_trans_OBUF_O_3$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R1C38_IOBB",
+            "src": "../design/module_top.sv:11.24-11.36",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877622 ],
+            "PAD": [  ]
+          }
+        },
+        "catodo_trans_OBUF_O_2$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R1C39_IOBA",
+            "src": "../design/module_top.sv:11.24-11.36",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877619 ],
+            "PAD": [  ]
+          }
+        },
+        "catodo_trans_OBUF_O_1$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R1C39_IOBB",
+            "src": "../design/module_top.sv:11.24-11.36",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877616 ],
+            "PAD": [  ]
+          }
+        },
+        "catodo_p0_OBUF_O_5$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R15C47_IOBB",
+            "src": "../design/module_top.sv:7.24-7.33",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877607 ],
+            "PAD": [  ]
+          }
+        },
+        "catodo_trans_OBUF_O$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R1C41_IOBA",
+            "src": "../design/module_top.sv:11.24-11.36",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877613 ],
+            "PAD": [  ]
+          }
+        },
+        "catodo_p0_OBUF_O_6$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R17C47_IOBB",
+            "src": "../design/module_top.sv:7.24-7.33",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877610 ],
+            "PAD": [  ]
+          }
+        },
+        "display_transmision.hex_output_MUX2_LUT5_O_LC": {
+          "hide_name": 0,
+          "type": "MUX2_LUT5",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R3C33_MUX2_LUT50"
+          },
+          "port_directions": {
+            "OF": "output",
+            "SEL": "input",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "OF": [ 3877622 ],
+            "SEL": [ 3877559 ],
+            "I1": [ 3877654 ],
+            "I0": [ 3877653 ]
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_I1_MUX2_LUT5_O_LC": {
+          "hide_name": 0,
+          "type": "MUX2_LUT5",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R4C22_MUX2_LUT50"
+          },
+          "port_directions": {
+            "OF": "output",
+            "SEL": "input",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "OF": [ 3877580 ],
+            "SEL": [ 3877559 ],
+            "I1": [ 3877588 ],
+            "I0": [ 3877587 ]
+          }
+        },
+        "catodo_p0_OBUF_O_4$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R15C47_IOBA",
+            "src": "../design/module_top.sv:7.24-7.33",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877604 ],
+            "PAD": [  ]
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_I0_MUX2_LUT5_O_LC": {
+          "hide_name": 0,
+          "type": "MUX2_LUT5",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R4C22_MUX2_LUT51"
+          },
+          "port_directions": {
+            "OF": "output",
+            "SEL": "input",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "OF": [ 3877579 ],
+            "SEL": [ 3877559 ],
+            "I1": [ 3877583 ],
+            "I0": [ 3877582 ]
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I0_MUX2_LUT6_O_I1_MUX2_LUT5_O_LC": {
+          "hide_name": 0,
+          "type": "MUX2_LUT5",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R4C22_MUX2_LUT52"
+          },
+          "port_directions": {
+            "OF": "output",
+            "SEL": "input",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "OF": [ 3877547 ],
+            "SEL": [ 3877559 ],
+            "I1": [ 3877575 ],
+            "I0": [ 3877574 ]
+          }
+        },
+        "catodo_p0_OBUF_O_3$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R14C47_IOBB",
+            "src": "../design/module_top.sv:7.24-7.33",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877601 ],
+            "PAD": [  ]
+          }
+        },
+        "anodo_p1_OBUF_O$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R1C41_IOBB",
+            "src": "../design/module_top.sv:12.24-12.32",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877688 ],
+            "PAD": [  ]
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I0_MUX2_LUT6_O_I0_MUX2_LUT5_O_LC": {
+          "hide_name": 0,
+          "type": "MUX2_LUT5",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R4C22_MUX2_LUT53"
+          },
+          "port_directions": {
+            "OF": "output",
+            "SEL": "input",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "OF": [ 3877546 ],
+            "SEL": [ 3877559 ],
+            "I1": [ 3877557 ],
+            "I0": [ 3877556 ]
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_LC": {
+          "hide_name": 0,
+          "type": "MUX2_LUT5",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R3C21_MUX2_LUT53"
+          },
+          "port_directions": {
+            "OF": "output",
+            "SEL": "input",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "OF": [ 3877532 ],
+            "SEL": [ 3877476 ],
+            "I1": [ 3877529 ],
+            "I0": [ 3877531 ]
+          }
+        },
+        "catodo_p0_OBUF_O_2$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R14C47_IOBA",
+            "src": "../design/module_top.sv:7.24-7.33",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877598 ],
+            "PAD": [  ]
+          }
+        },
+        "button_IBUF_I_O_ALU_COUT_SUM_ALU_SUM_1_ALULC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "ALU_MODE": "00000000000000000000000000000010",
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R3C21_SLICE1"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877526 ],
+            "CLK": [  ],
+            "D": [ 3877686 ],
+            "C": [ 3877688 ],
+            "B": [ 3877525 ],
+            "A": [ 3877686 ]
+          }
+        },
+        "button_IBUF_I_O_ALU_COUT_SUM_ALU_SUM_ALULC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "ALU_MODE": "00000000000000000000000000000010",
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R3C21_SLICE2"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877522 ],
+            "CLK": [  ],
+            "D": [ 3877686 ],
+            "C": [ 3877688 ],
+            "B": [ 3877521 ],
+            "A": [ 3877688 ]
+          }
+        },
+        "catodo_p0_OBUF_O_1$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R13C47_IOBA",
+            "src": "../design/module_top.sv:7.24-7.33",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877595 ],
+            "PAD": [  ]
+          }
+        },
+        "button_IBUF_I$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000000",
+            "INPUT_USED": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R1C2_IOBA",
+            "src": "../design/module_top.sv:4.18-4.24",
+            "&IO_TYPE=LVCMOS18": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [ 3877476 ],
+            "OEN": [  ],
+            "I": [  ],
+            "PAD": [  ]
+          }
+        },
+        "anodo_p0_OBUF_O$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R1C6_IOBB",
+            "src": "../design/module_top.sv:8.24-8.32"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877688 ],
+            "PAD": [  ]
+          }
+        },
+        "button_IBUF_I_O_ALU_COUT_ALULC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "ALU_MODE": "00000000000000000000000000000010",
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R3C21_SLICE3"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877516 ],
+            "CLK": [  ],
+            "D": [ 3877686 ],
+            "C": [ 3877688 ],
+            "B": [ 3877481 ],
+            "A": [ 3877688 ]
+          }
+        },
+        "catodo_p0_OBUF_O$iob": {
+          "hide_name": 0,
+          "type": "IOB",
+          "parameters": {
+            "ENABLE_USED": "00000000000000000000000000000000",
+            "OUTPUT_USED": "00000000000000000000000000000001",
+            "INPUT_USED": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000110",
+            "NEXTPNR_BEL": "R1C42_IOBB",
+            "src": "../design/module_top.sv:7.24-7.33",
+            "&IO_TYPE=LVCMOS33": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "OEN": "input",
+            "I": "input",
+            "PAD": "inout"
+          },
+          "connections": {
+            "O": [  ],
+            "OEN": [  ],
+            "I": [ 3877592 ],
+            "PAD": [  ]
+          }
+        },
+        "button_IBUF_I_O_ALU_COUT_TAIL_ALULC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "ALU_MODE": "C2L",
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R3C21_SLICE4"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [ 3877479 ],
+            "CLK": [  ],
+            "D": [  ],
+            "C": [  ],
+            "B": [  ],
+            "A": [  ]
+          }
+        },
+        "button_IBUF_I_O_ALU_COUT_DUMMY_ALULC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "ALU_MODE": "C2L",
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R3C21_SLICE5"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [  ],
+            "CLK": [  ],
+            "D": [  ],
+            "C": [  ],
+            "B": [  ],
+            "A": [  ]
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I0_MUX2_LUT6_O_LC": {
+          "hide_name": 0,
+          "type": "MUX2_LUT6",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R4C22_MUX2_LUT61"
+          },
+          "port_directions": {
+            "OF": "output",
+            "SEL": "input",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "OF": [ 3877535 ],
+            "SEL": [ 3877549 ],
+            "I1": [ 3877547 ],
+            "I0": [ 3877546 ]
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_LC": {
+          "hide_name": 0,
+          "type": "MUX2_LUT6",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R4C22_MUX2_LUT60"
+          },
+          "port_directions": {
+            "OF": "output",
+            "SEL": "input",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "OF": [ 3877536 ],
+            "SEL": [ 3877549 ],
+            "I1": [ 3877580 ],
+            "I0": [ 3877579 ]
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_LC": {
+          "hide_name": 0,
+          "type": "MUX2_LUT7",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R4C22_MUX2_LUT70"
+          },
+          "port_directions": {
+            "OF": "output",
+            "SEL": "input",
+            "I1": "input",
+            "I0": "input"
+          },
+          "connections": {
+            "OF": [ 3877537 ],
+            "SEL": [ 3877539 ],
+            "I1": [ 3877536 ],
+            "I0": [ 3877535 ]
+          }
+        },
+        "button_IBUF_I_O_ALU_COUT_SUM_ALU_SUM_1_HEAD_ALULC": {
+          "hide_name": 0,
+          "type": "SLICE",
+          "parameters": {
+            "ALU_MODE": "ONE2C",
+            "FF_TYPE": "DFF",
+            "FF_USED": "00000000000000000000000000000000",
+            "INIT": "00000000000000000000000000000000"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R3C21_SLICE0"
+          },
+          "port_directions": {
+            "LSR": "input",
+            "CE": "input",
+            "Q": "output",
+            "F": "output",
+            "CLK": "input",
+            "D": "input",
+            "C": "input",
+            "B": "input",
+            "A": "input"
+          },
+          "connections": {
+            "LSR": [  ],
+            "CE": [  ],
+            "Q": [  ],
+            "F": [  ],
+            "CLK": [  ],
+            "D": [  ],
+            "C": [ 3877688 ],
+            "B": [  ],
+            "A": [  ]
+          }
+        },
+        "$PACKER_GND": {
+          "hide_name": 1,
+          "type": "GND",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "GND"
+          },
+          "port_directions": {
+            "G": "output"
+          },
+          "connections": {
+            "G": [ 3877686 ]
+          }
+        },
+        "GSR": {
+          "hide_name": 0,
+          "type": "GSR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "R1C1_GSR0"
+          },
+          "port_directions": {
+            "GSRI": "input"
+          },
+          "connections": {
+            "GSRI": [ 3877688 ]
+          }
+        }
+      },
+      "netnames": {
+        "display_transmision.hex_output_MUX2_LUT5_O_I0": {
+          "hide_name": 0,
+          "bits": [ 3877653 ] ,
+          "attributes": {
+            "ROUTING": "R3C33_F0;;1;R3C33_I0MUX0;R3C33_F0_DUMMY_I0MUX0;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:151.9-151.11"
+          }
+        },
+        "display_entrada.hex_output[1]": {
+          "hide_name": 0,
+          "bits": [ 3877607 ] ,
+          "attributes": {
+            "ROUTING": "R15C46_F3;;1;R15C46_E10;R15C46_F3_E100;1;R15C47_D1;R15C47_E101_D1;1",
+            "src": "../design/module_top.sv:44.24-47.6|../design/module_bin_to_hexa.sv:3.24-3.34",
+            "hdlname": "display_entrada hex_output"
+          }
+        },
+        "display_transmision.hex_output_MUX2_LUT5_O_I1": {
+          "hide_name": 0,
+          "bits": [ 3877654 ] ,
+          "attributes": {
+            "ROUTING": "R3C33_F1;;1;R3C33_I1MUX0;R3C33_F1_DUMMY_I1MUX0;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:151.13-151.15"
+          }
+        },
+        "display_entrada.hex_output[2]": {
+          "hide_name": 0,
+          "bits": [ 3877604 ] ,
+          "attributes": {
+            "ROUTING": "R15C46_F0;;1;R15C46_EW10;R15C46_F0_EW10;1;R15C47_A0;R15C47_E111_A0;1",
+            "src": "../design/module_top.sv:44.24-47.6|../design/module_bin_to_hexa.sv:3.24-3.34",
+            "hdlname": "display_entrada hex_output"
+          }
+        },
+        "display_transmision.hex_output[4]": {
+          "hide_name": 0,
+          "bits": [ 3877619 ] ,
+          "attributes": {
+            "ROUTING": "R2C39_F1;;1;R2C39_SN10;R2C39_F1_SN10;1;R1C39_A0;R1C39_N111_A0;1",
+            "src": "../design/module_top.sv:51.24-54.6|../design/module_bin_to_hexa.sv:3.24-3.34",
+            "hdlname": "display_transmision hex_output"
+          }
+        },
+        "display_entrada.hex_output[3]": {
+          "hide_name": 0,
+          "bits": [ 3877601 ] ,
+          "attributes": {
+            "ROUTING": "R14C46_F1;;1;R14C46_E10;R14C46_F1_E100;1;R14C47_D1;R14C47_E101_D1;1",
+            "src": "../design/module_top.sv:44.24-47.6|../design/module_bin_to_hexa.sv:3.24-3.34",
+            "hdlname": "display_entrada hex_output"
+          }
+        },
+        "display_transmision.hex_output[1]": {
+          "hide_name": 0,
+          "bits": [ 3877628 ] ,
+          "attributes": {
+            "ROUTING": "R2C37_F6;;1;R2C37_N10;R2C37_F6_N100;1;R1C37_D1;R1C37_N101_D1;1",
+            "src": "../design/module_top.sv:51.24-54.6|../design/module_bin_to_hexa.sv:3.24-3.34",
+            "hdlname": "display_transmision hex_output"
+          }
+        },
+        "display_entrada.hex_output[4]": {
+          "hide_name": 0,
+          "bits": [ 3877598 ] ,
+          "attributes": {
+            "ROUTING": "R14C46_F5;;1;R14C46_EW10;R14C46_F5_EW10;1;R14C47_A0;R14C47_E111_A0;1",
+            "src": "../design/module_top.sv:44.24-47.6|../design/module_bin_to_hexa.sv:3.24-3.34",
+            "hdlname": "display_entrada hex_output"
+          }
+        },
+        "display_transmision.hex_output[5]": {
+          "hide_name": 0,
+          "bits": [ 3877616 ] ,
+          "attributes": {
+            "ROUTING": "R2C39_F4;;1;R2C39_N10;R2C39_F4_N100;1;R1C39_D1;R1C39_N101_D1;1",
+            "src": "../design/module_top.sv:51.24-54.6|../design/module_bin_to_hexa.sv:3.24-3.34",
+            "hdlname": "display_transmision hex_output"
+          }
+        },
+        "display_entrada.hex_output[5]": {
+          "hide_name": 0,
+          "bits": [ 3877595 ] ,
+          "attributes": {
+            "ROUTING": "R13C46_F0;;1;R13C46_EW10;R13C46_F0_EW10;1;R13C47_A0;R13C47_E111_A0;1",
+            "src": "../design/module_top.sv:44.24-47.6|../design/module_bin_to_hexa.sv:3.24-3.34",
+            "hdlname": "display_entrada hex_output"
+          }
+        },
+        "display_transmision.hex_output[3]": {
+          "hide_name": 0,
+          "bits": [ 3877622 ] ,
+          "attributes": {
+            "ROUTING": "R3C33_OF0;;1;R3C33_N20;R3C33_OF0_N200;1;R1C33_E20;R1C33_N202_E200;1;R1C35_E20;R1C35_E202_E200;1;R1C37_E20;R1C37_E202_E200;1;R1C38_D1;R1C38_E201_D1;1",
+            "src": "../design/module_top.sv:51.24-54.6|../design/module_bin_to_hexa.sv:3.24-3.34",
+            "hdlname": "display_transmision hex_output"
+          }
+        },
+        "display_entrada.hex_output[6]": {
+          "hide_name": 0,
+          "bits": [ 3877592 ] ,
+          "attributes": {
+            "ROUTING": "R2C42_F6;;1;R2C42_N10;R2C42_F6_N100;1;R1C42_D1;R1C42_N101_D1;1",
+            "src": "../design/module_top.sv:44.24-47.6|../design/module_bin_to_hexa.sv:3.24-3.34",
+            "hdlname": "display_entrada hex_output"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_I1_MUX2_LUT5_O_I1": {
+          "hide_name": 0,
+          "bits": [ 3877588 ] ,
+          "attributes": {
+            "ROUTING": "R4C22_F1;;1;R4C22_I1MUX0;R4C22_F1_DUMMY_I1MUX0;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:165.42-165.67|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:159.41-159.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:151.13-151.15"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_I1_MUX2_LUT5_O_I0": {
+          "hide_name": 0,
+          "bits": [ 3877587 ] ,
+          "attributes": {
+            "ROUTING": "R4C22_F0;;1;R4C22_I0MUX0;R4C22_F0_DUMMY_I0MUX0;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:165.42-165.67|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:159.41-159.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:151.9-151.11"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_I0_MUX2_LUT5_O_I1": {
+          "hide_name": 0,
+          "bits": [ 3877583 ] ,
+          "attributes": {
+            "ROUTING": "R4C22_F3;;1;R4C22_I1MUX2;R4C22_F3_DUMMY_I1MUX2;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:165.42-165.67|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:158.41-158.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:151.13-151.15"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_I0_MUX2_LUT5_O_I0": {
+          "hide_name": 0,
+          "bits": [ 3877582 ] ,
+          "attributes": {
+            "ROUTING": "R4C22_F2;;1;R4C22_I0MUX2;R4C22_F2_DUMMY_I0MUX2;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:165.42-165.67|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:158.41-158.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:151.9-151.11"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_I1": {
+          "hide_name": 0,
+          "bits": [ 3877580 ] ,
+          "attributes": {
+            "ROUTING": "R4C22_OF0;;1;R4C22_I1MUX1;R4C22_OF0_DUMMY_I1MUX1;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:165.42-165.67|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:157.13-157.15"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_I0": {
+          "hide_name": 0,
+          "bits": [ 3877579 ] ,
+          "attributes": {
+            "ROUTING": "R4C22_OF2;;1;R4C22_I0MUX1;R4C22_OF2_DUMMY_I0MUX1;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:165.42-165.67|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:157.9-157.11"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I0_MUX2_LUT6_O_I1_MUX2_LUT5_O_I1": {
+          "hide_name": 0,
+          "bits": [ 3877575 ] ,
+          "attributes": {
+            "ROUTING": "R4C22_F5;;1;R4C22_I1MUX4;R4C22_F5_DUMMY_I1MUX4;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:164.41-164.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:159.41-159.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:151.13-151.15"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I0_MUX2_LUT6_O_I1_MUX2_LUT5_O_I0": {
+          "hide_name": 0,
+          "bits": [ 3877574 ] ,
+          "attributes": {
+            "ROUTING": "R4C22_F4;;1;R4C22_I0MUX4;R4C22_F4_DUMMY_I0MUX4;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:164.41-164.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:159.41-159.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:151.9-151.11"
+          }
+        },
+        "codeword[4]": {
+          "hide_name": 0,
+          "bits": [ 3877567 ] ,
+          "attributes": {
+            "ROUTING": "R4C22_C1;R4C22_X01_C1;1;R3C22_E22;R3C22_N222_E220;1;R3C24_E22;R3C24_E222_E220;1;R3C26_E22;R3C26_E222_E220;1;R3C28_E23;R3C28_E222_E230;1;R3C30_E26;R3C30_E232_E260;1;R3C32_E26;R3C32_E262_E260;1;R3C34_E27;R3C34_E262_E270;1;R3C36_E27;R3C36_E272_E270;1;R3C38_E82;R3C38_E272_E820;1;R3C42_N27;R3C42_E824_N270;1;R2C42_B6;R2C42_N271_B6;1;R4C22_C2;R4C22_X01_C2;1;R4C22_C4;R4C22_N221_C4;1;R4C22_X01;R4C22_N221_X01;1;R4C22_C0;R4C22_X01_C0;1;R13C46_X06;R13C46_N272_X06;1;R13C46_D0;R13C46_X06_D0;1;R17C22_N27;R17C22_E272_N270;1;R15C22_N27;R15C22_N272_N270;1;R13C22_N22;R13C22_N272_N220;1;R11C22_N23;R11C22_N222_N230;1;R9C22_N26;R9C22_N232_N260;1;R7C22_N27;R7C22_N262_N270;1;R5C22_N22;R5C22_N272_N220;1;R4C22_C7;R4C22_N221_C7;1;R17C16_E23;R17C16_E232_E230;1;R17C18_E26;R17C18_E232_E260;1;R17C20_E27;R17C20_E262_E270;1;R17C22_E27;R17C22_E272_E270;1;R17C24_E22;R17C24_E272_E220;1;R17C26_E22;R17C26_E222_E220;1;R17C28_E22;R17C28_E222_E220;1;R17C30_E22;R17C30_E222_E220;1;R17C32_E23;R17C32_E222_E230;1;R17C34_E23;R17C34_E232_E230;1;R17C36_E23;R17C36_E232_E230;1;R17C38_E23;R17C38_E232_E230;1;R17C40_E23;R17C40_E232_E230;1;R17C42_E80;R17C42_E232_E800;1;R17C45_E23;R17C45_W808_E230;1;R17C46_B0;R17C46_E231_B0;1;R15C46_N27;R15C46_E272_N270;1;R14C46_A1;R14C46_N271_A1;1;R4C22_C5;R4C22_X05_C5;1;R15C46_X08;R15C46_E272_X08;1;R15C46_D0;R15C46_X08_D0;1;R15C16_E23;R15C16_N232_E230;1;R15C18_E26;R15C18_E232_E260;1;R15C20_E27;R15C20_E262_E270;1;R15C22_E22;R15C22_E272_E220;1;R15C24_E23;R15C24_E222_E230;1;R15C26_E26;R15C26_E232_E260;1;R15C28_E26;R15C28_E262_E260;1;R15C30_E27;R15C30_E262_E270;1;R15C32_E22;R15C32_E272_E220;1;R15C34_E23;R15C34_E222_E230;1;R15C36_E23;R15C36_E232_E230;1;R15C38_E26;R15C38_E232_E260;1;R15C40_E26;R15C40_E262_E260;1;R15C42_E26;R15C42_E262_E260;1;R15C44_E27;R15C44_E262_E270;1;R15C46_A3;R15C46_E272_A3;1;R14C16_E23;R14C16_N231_E230;1;R14C18_E26;R14C18_E232_E260;1;R14C20_E26;R14C20_E262_E260;1;R14C22_E26;R14C22_E262_E260;1;R14C24_E27;R14C24_E262_E270;1;R14C26_E22;R14C26_E272_E220;1;R14C28_E22;R14C28_E222_E220;1;R14C30_E22;R14C30_E222_E220;1;R14C32_E23;R14C32_E222_E230;1;R14C34_E26;R14C34_E232_E260;1;R14C36_E27;R14C36_E262_E270;1;R14C38_E27;R14C38_E272_E270;1;R14C40_E22;R14C40_E272_E220;1;R14C42_E23;R14C42_E222_E230;1;R14C44_E23;R14C44_E232_E230;1;R14C46_X06;R14C46_E232_X06;1;R14C46_A5;R14C46_X06_A5;1;R4C22_X05;R4C22_N261_X05;1;R4C22_C6;R4C22_X05_C6;1;R22C8_W22;R22C8_N221_W220;1;R22C6_W22;R22C6_W222_W220;1;R22C4_W22;R22C4_W222_W220;1;R22C2_W22;R22C2_W222_W220;1;R22C1_D1;R22C1_E222_D1;1;R29C8_F6;;1;R29C8_N26;R29C8_F6_N260;1;R27C8_N27;R27C8_N262_N270;1;R25C8_N22;R25C8_N272_N220;1;R23C8_N22;R23C8_N222_N220;1;R21C8_N22;R21C8_N222_N220;1;R19C8_N23;R19C8_N222_N230;1;R17C8_E23;R17C8_N232_E230;1;R17C10_E23;R17C10_E232_E230;1;R17C12_E23;R17C12_E232_E230;1;R17C14_E23;R17C14_E232_E230;1;R17C16_N23;R17C16_E232_N230;1;R15C16_N23;R15C16_N232_N230;1;R13C16_E23;R13C16_N232_E230;1;R13C18_N23;R13C18_E232_N230;1;R11C18_N23;R11C18_N232_N230;1;R9C18_N26;R9C18_N232_N260;1;R7C18_N26;R7C18_N262_N260;1;R5C18_E26;R5C18_N262_E260;1;R5C20_E26;R5C20_E262_E260;1;R5C22_N26;R5C22_E262_N260;1;R4C22_C3;R4C22_N261_C3;1",
+            "hdlname": "error_injector encoded_word",
+            "src": "../design/module_top.sv:32.28-36.6|../design/module_error_injection.sv:2.24-2.36"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O[4]": {
+          "hide_name": 0,
+          "bits": [ 3877559 ] ,
+          "attributes": {
+            "ROUTING": "R2C34_E22;R2C34_E272_E220;1;R2C36_E23;R2C36_E222_E230;1;R2C37_B6;R2C37_E231_B6;1;R2C42_D6;R2C42_N261_D6;1;R2C38_X03;R2C38_E262_X03;1;R2C38_D3;R2C38_X03_D3;1;R2C39_X01;R2C39_E221_X01;1;R2C39_A1;R2C39_X01_A1;1;R11C32_N27;R11C32_N272_N270;1;R9C32_N27;R9C32_N272_N270;1;R7C32_N82;R7C32_N272_N820;1;R3C32_E24;R3C32_N824_E240;1;R3C33_X07;R3C33_E241_X07;1;R3C33_SEL0;R3C33_X07_SEL0;1;R2C24_E22;R2C24_N221_E220;1;R2C26_E22;R2C26_E222_E220;1;R2C28_E23;R2C28_E222_E230;1;R2C30_E23;R2C30_E232_E230;1;R2C32_E23;R2C32_E232_E230;1;R2C34_E23;R2C34_E232_E230;1;R2C36_E26;R2C36_E232_E260;1;R2C38_E27;R2C38_E262_E270;1;R2C39_X08;R2C39_E271_X08;1;R2C39_B4;R2C39_X08_B4;1;R2C22_S21;R2C22_S818_S210;1;R4C22_X06;R4C22_S212_X06;1;R4C22_SEL0;R4C22_X06_SEL0;1;R7C42_N22;R7C42_N272_N220;1;R5C42_N23;R5C42_N222_N230;1;R3C42_N26;R3C42_N232_N260;1;R7C22_N81;R7C22_N222_N810;1;R14C46_C5;R14C46_X05_C5;1;R2C34_E27;R2C34_E272_E270;1;R2C36_E27;R2C36_E272_E270;1;R2C38_E22;R2C38_E272_E220;1;R4C22_SEL6;R4C22_X06_SEL6;1;R3C24_N22;R3C24_N222_N220;1;R5C22_E22;R5C22_N222_E220;1;R14C22_E23;R14C22_N231_E230;1;R14C24_E26;R14C24_E232_E260;1;R14C26_E26;R14C26_E262_E260;1;R14C28_E27;R14C28_E262_E270;1;R14C30_E27;R14C30_E272_E270;1;R14C32_E22;R14C32_E272_E220;1;R14C34_E23;R14C34_E222_E230;1;R14C36_E23;R14C36_E232_E230;1;R14C38_E26;R14C38_E232_E260;1;R14C40_E26;R14C40_E262_E260;1;R14C42_E26;R14C42_E262_E260;1;R14C44_E26;R14C44_E262_E260;1;R14C46_C1;R14C46_E262_C1;1;R15C46_C3;R15C46_N262_C3;1;R15C46_C0;R15C46_N262_C0;1;R4C22_SEL2;R4C22_X06_SEL2;1;R17C42_N22;R17C42_E222_N220;1;R15C42_N23;R15C42_N222_N230;1;R13C42_N26;R13C42_N232_N260;1;R11C42_N27;R11C42_N262_N270;1;R9C42_N27;R9C42_N272_N270;1;R2C32_E27;R2C32_S828_E270;1;R17C32_N23;R17C32_E232_N230;1;R15C32_N26;R15C32_N232_N260;1;R13C32_N27;R13C32_N262_N270;1;R17C22_N22;R17C22_E222_N220;1;R15C22_N23;R15C22_N222_N230;1;R13C22_N26;R13C22_N232_N260;1;R11C22_N27;R11C22_N262_N270;1;R9C22_N22;R9C22_N272_N220;1;R7C22_N22;R7C22_N222_N220;1;R14C46_X05;R14C46_N261_X05;1;R4C22_SEL4;R4C22_X06_SEL4;1;R5C24_N22;R5C24_E222_N220;1;R29C8_W26;R29C8_Q6_W260;1;R29C6_N26;R29C6_W262_N260;1;R27C6_W26;R27C6_N262_W260;1;R27C4_N26;R27C4_W262_N260;1;R25C4_N27;R25C4_N262_N270;1;R23C4_N27;R23C4_N272_N270;1;R21C4_W27;R21C4_N272_W270;1;R21C2_W22;R21C2_W272_W220;1;R21C1_D1;R21C1_E222_D1;1;R17C46_N26;R17C46_E262_N260;1;R15C46_N26;R15C46_N262_N260;1;R13C46_X07;R13C46_N262_X07;1;R13C46_B0;R13C46_X07_B0;1;R29C8_Q6;;1;R29C8_E26;R29C8_Q6_E260;1;R29C10_N26;R29C10_E262_N260;1;R27C10_E26;R27C10_N262_E260;1;R27C12_N26;R27C12_E262_N260;1;R25C12_N26;R25C12_N262_N260;1;R23C12_N26;R23C12_N262_N260;1;R21C12_N27;R21C12_N262_N270;1;R19C12_N27;R19C12_N272_N270;1;R17C12_E27;R17C12_N272_E270;1;R17C14_E22;R17C14_E272_E220;1;R17C16_E22;R17C16_E222_E220;1;R17C18_E22;R17C18_E222_E220;1;R17C20_E22;R17C20_E222_E220;1;R17C22_E22;R17C22_E222_E220;1;R17C24_E23;R17C24_E222_E230;1;R17C26_E23;R17C26_E232_E230;1;R17C28_E23;R17C28_E232_E230;1;R17C30_E23;R17C30_E232_E230;1;R17C32_E26;R17C32_E232_E260;1;R17C34_E27;R17C34_E262_E270;1;R17C36_E27;R17C36_E272_E270;1;R17C38_E27;R17C38_E272_E270;1;R17C40_E22;R17C40_E272_E220;1;R17C42_E23;R17C42_E222_E230;1;R17C44_E26;R17C44_E232_E260;1;R17C46_C0;R17C46_E262_C0;1",
+            "hdlname": "error_injector encoded_word",
+            "src": "../design/module_top.sv:32.28-36.6|../design/module_error_injection.sv:2.24-2.36",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I0_MUX2_LUT6_O_I0_MUX2_LUT5_O_I1": {
+          "hide_name": 0,
+          "bits": [ 3877557 ] ,
+          "attributes": {
+            "ROUTING": "R4C22_F7;;1;R4C22_I1MUX6;R4C22_F7_DUMMY_I1MUX6;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:164.41-164.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:158.41-158.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:151.13-151.15"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I0_MUX2_LUT6_O_I0_MUX2_LUT5_O_I0": {
+          "hide_name": 0,
+          "bits": [ 3877556 ] ,
+          "attributes": {
+            "ROUTING": "R4C22_F6;;1;R4C22_I0MUX6;R4C22_F6_DUMMY_I0MUX6;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:164.41-164.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:158.41-158.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:151.9-151.11"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O[1]": {
+          "hide_name": 0,
+          "bits": [ 3877549 ] ,
+          "attributes": {
+            "ROUTING": "R17C37_E22;R17C37_E272_E220;1;R17C39_E22;R17C39_E222_E220;1;R17C41_E23;R17C41_E222_E230;1;R17C43_E26;R17C43_E232_E260;1;R17C45_E27;R17C45_E262_E270;1;R17C46_A0;R17C46_E271_A0;1;R2C37_E26;R2C37_E262_E260;1;R2C39_C4;R2C39_E262_C4;1;R2C33_E26;R2C33_N261_E260;1;R2C35_E26;R2C35_E262_E260;1;R2C37_E27;R2C37_E262_E270;1;R2C39_X04;R2C39_E272_X04;1;R2C39_B1;R2C39_X04_B1;1;R3C33_B1;R3C33_N232_B1;1;R13C39_E27;R13C39_N272_E270;1;R13C41_E27;R13C41_E272_E270;1;R13C43_E27;R13C43_E272_E270;1;R13C45_E27;R13C45_E272_E270;1;R13C46_A0;R13C46_E271_A0;1;R4C22_SEL1;R4C22_X04_SEL1;1;R14C33_E27;R14C33_N271_E270;1;R14C35_E22;R14C35_E272_E220;1;R14C37_E22;R14C37_E222_E220;1;R14C39_E22;R14C39_E222_E220;1;R14C41_E22;R14C41_E222_E220;1;R14C43_E81;R14C43_E222_E810;1;R14C44_E21;R14C44_W818_E210;1;R14C46_B1;R14C46_E212_B1;1;R17C33_N26;R17C33_E262_N260;1;R15C33_N27;R15C33_N262_N270;1;R13C33_N22;R13C33_N272_N220;1;R11C33_N23;R11C33_N222_N230;1;R9C33_N23;R9C33_N232_N230;1;R7C33_N23;R7C33_N232_N230;1;R5C33_N23;R5C33_N232_N230;1;R3C33_B0;R3C33_N232_B0;1;R15C38_N27;R15C38_E271_N270;1;R13C38_N27;R13C38_N272_N270;1;R11C38_N27;R11C38_N272_N270;1;R9C38_N22;R9C38_N272_N220;1;R7C38_N23;R7C38_N222_N230;1;R5C38_N23;R5C38_N232_N230;1;R3C38_N23;R3C38_N232_N230;1;R2C38_B3;R2C38_N231_B3;1;R15C45_N23;R15C45_E232_N230;1;R14C45_E23;R14C45_N231_E230;1;R14C46_B5;R14C46_E231_B5;1;R15C46_B3;R15C46_E231_B3;1;R3C33_N26;R3C33_N232_N260;1;R29C22_N22;R29C22_E221_N220;1;R27C22_N22;R27C22_N222_N220;1;R25C22_N22;R25C22_N222_N220;1;R23C22_N22;R23C22_N222_N220;1;R21C22_N22;R21C22_N222_N220;1;R19C22_N22;R19C22_N222_N220;1;R17C22_N23;R17C22_N222_N230;1;R15C22_N26;R15C22_N232_N260;1;R13C22_N27;R13C22_N262_N270;1;R11C22_N22;R11C22_N272_N220;1;R9C22_N23;R9C22_N222_N230;1;R7C22_N26;R7C22_N232_N260;1;R5C22_N27;R5C22_N262_N270;1;R4C22_X04;R4C22_N271_X04;1;R4C22_SEL5;R4C22_X04_SEL5;1;R15C39_E22;R15C39_E272_E220;1;R15C41_E23;R15C41_E222_E230;1;R15C43_E23;R15C43_E232_E230;1;R15C45_E23;R15C45_E232_E230;1;R15C46_B0;R15C46_E231_B0;1;R29C13_W26;R29C13_F6_W260;1;R29C11_W26;R29C11_W262_W260;1;R29C9_N26;R29C9_W262_N260;1;R27C9_N26;R27C9_N262_N260;1;R25C9_N27;R25C9_N262_N270;1;R23C9_N27;R23C9_N272_N270;1;R21C9_N27;R21C9_N272_N270;1;R19C9_W27;R19C9_N272_W270;1;R19C7_W27;R19C7_W272_W270;1;R19C5_W27;R19C5_W272_W270;1;R19C3_W22;R19C3_W272_W220;1;R19C1_N22;R19C1_W222_N220;1;R17C1_N22;R17C1_N222_N220;1;R16C1_D1;R16C1_N221_D1;1;R3C41_N27;R3C41_E272_N270;1;R2C41_B4;R2C41_N271_B4;1;R29C13_F6;;1;R29C13_E26;R29C13_F6_E260;1;R29C15_E26;R29C15_E262_E260;1;R29C17_E27;R29C17_E262_E270;1;R29C19_E27;R29C19_E272_E270;1;R29C21_E22;R29C21_E272_E220;1;R29C23_E22;R29C23_E222_E220;1;R29C25_E23;R29C25_E222_E230;1;R29C27_E26;R29C27_E232_E260;1;R29C29_E27;R29C29_E262_E270;1;R29C31_N27;R29C31_E272_N270;1;R27C31_N22;R27C31_N272_N220;1;R25C31_N22;R25C31_N222_N220;1;R23C31_N23;R23C31_N222_N230;1;R21C31_N26;R21C31_N232_N260;1;R19C31_N26;R19C31_N262_N260;1;R17C31_E26;R17C31_N262_E260;1;R17C33_E27;R17C33_E262_E270;1;R17C35_E27;R17C35_E272_E270;1;R17C37_N27;R17C37_E272_N270;1;R15C37_E27;R15C37_N272_E270;1;R15C39_N27;R15C39_E272_N270;1;R13C39_N27;R13C39_N272_N270;1;R11C39_N22;R11C39_N272_N220;1;R9C39_N23;R9C39_N222_N230;1;R7C39_N26;R7C39_N232_N260;1;R5C39_N27;R5C39_N262_N270;1;R3C39_E27;R3C39_N272_E270;1;R3C41_E22;R3C41_E272_E220;1;R3C42_N22;R3C42_E221_N220;1;R2C42_C6;R2C42_N221_C6;1",
+            "hdlname": "error_injector encoded_word",
+            "src": "../design/module_top.sv:32.28-36.6|../design/module_error_injection.sv:2.24-2.36",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I0_MUX2_LUT6_O_I1": {
+          "hide_name": 0,
+          "bits": [ 3877547 ] ,
+          "attributes": {
+            "ROUTING": "R4C22_OF4;;1;R4C22_I1MUX5;R4C22_OF4_DUMMY_I1MUX5;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:164.41-164.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:157.13-157.15"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I0_MUX2_LUT6_O_I0": {
+          "hide_name": 0,
+          "bits": [ 3877546 ] ,
+          "attributes": {
+            "ROUTING": "R4C22_OF6;;1;R4C22_I0MUX5;R4C22_OF6_DUMMY_I0MUX5;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:164.41-164.66|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:157.9-157.11"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O[3]": {
+          "hide_name": 0,
+          "bits": [ 3877539 ] ,
+          "attributes": {
+            "ROUTING": "R17C38_N26;R17C38_E261_N260;1;R15C38_N26;R15C38_N262_N260;1;R13C38_N26;R13C38_N262_N260;1;R11C38_N26;R11C38_N262_N260;1;R9C38_N27;R9C38_N262_N270;1;R7C38_N27;R7C38_N272_N270;1;R5C38_N82;R5C38_N272_N820;1;R4C38_N24;R4C38_S828_N240;1;R2C38_C3;R2C38_N242_C3;1;R5C22_N24;R5C22_N242_N240;1;R4C22_SEL3;R4C22_N241_SEL3;1;R5C39_N82;R5C39_N272_N820;1;R4C39_N24;R4C39_S828_N240;1;R2C39_D4;R2C39_N242_D4;1;R19C22_N27;R19C22_E271_N270;1;R17C22_N82;R17C22_N272_N820;1;R9C22_N24;R9C22_N828_N240;1;R5C39_N22;R5C39_N272_N220;1;R7C22_N24;R7C22_N242_N240;1;R15C41_N26;R15C41_E262_N260;1;R13C41_N26;R13C41_N262_N260;1;R11C41_N26;R11C41_N262_N260;1;R9C41_N26;R9C41_N262_N260;1;R7C41_N26;R7C41_N262_N260;1;R5C41_N27;R5C41_N262_N270;1;R3C41_N22;R3C41_N272_N220;1;R2C41_C4;R2C41_N221_C4;1;R15C45_N22;R15C45_E222_N220;1;R14C45_E22;R14C45_N221_E220;1;R14C46_D5;R14C46_E221_D5;1;R19C11_E26;R19C11_N262_E260;1;R19C13_E26;R19C13_E262_E260;1;R19C15_E27;R19C15_E262_E270;1;R19C17_E27;R19C17_E272_E270;1;R19C19_E27;R19C19_E272_E270;1;R19C21_E27;R19C21_E272_E270;1;R19C23_N27;R19C23_E272_N270;1;R17C23_E27;R17C23_N272_E270;1;R17C25_E22;R17C25_E272_E220;1;R17C27_N22;R17C27_E222_N220;1;R15C27_E22;R15C27_N222_E220;1;R15C29_E22;R15C29_E222_E220;1;R15C31_E23;R15C31_E222_E230;1;R15C33_E26;R15C33_E232_E260;1;R15C35_E26;R15C35_E262_E260;1;R15C37_E26;R15C37_E262_E260;1;R15C39_E26;R15C39_E262_E260;1;R15C41_E27;R15C41_E262_E270;1;R15C43_E22;R15C43_E272_E220;1;R15C45_E22;R15C45_E222_E220;1;R15C46_N22;R15C46_E221_N220;1;R14C46_D1;R14C46_N221_D1;1;R23C11_N26;R23C11_N262_N260;1;R21C11_N26;R21C11_N262_N260;1;R19C11_W26;R19C11_N262_W260;1;R19C9_W26;R19C9_W262_W260;1;R19C7_N26;R19C7_W262_N260;1;R17C7_W26;R17C7_N262_W260;1;R17C5_N26;R17C5_W262_N260;1;R15C5_W26;R15C5_N262_W260;1;R15C3_W27;R15C3_W262_W270;1;R15C1_A0;R15C1_W272_A0;1;R15C46_N20;R15C46_W808_N200;1;R15C46_A0;R15C46_N200_A0;1;R15C25_E23;R15C25_N232_E230;1;R15C27_E26;R15C27_E232_E260;1;R15C29_E26;R15C29_E262_E260;1;R15C31_E27;R15C31_E262_E270;1;R15C33_E27;R15C33_E272_E270;1;R15C35_E27;R15C35_E272_E270;1;R15C37_E22;R15C37_E272_E220;1;R15C39_E23;R15C39_E222_E230;1;R15C41_E80;R15C41_E232_E800;1;R15C46_W13;R15C46_W808_W130;1;R15C46_D3;R15C46_W130_D3;1;R13C33_N26;R13C33_E262_N260;1;R11C33_N26;R11C33_N262_N260;1;R9C33_N26;R9C33_N262_N260;1;R7C33_N26;R7C33_N262_N260;1;R5C33_N27;R5C33_N262_N270;1;R3C33_X08;R3C33_N272_X08;1;R3C33_D1;R3C33_X08_D1;1;R3C39_N22;R3C39_N222_N220;1;R2C39_D1;R2C39_N221_D1;1;R3C41_N82;R3C41_N272_N820;1;R2C41_E27;R2C41_S824_E270;1;R2C42_A6;R2C42_E271_A6;1;R15C39_N26;R15C39_E262_N260;1;R11C39_N26;R11C39_N262_N260;1;R9C39_N27;R9C39_N262_N270;1;R13C39_N26;R13C39_N262_N260;1;R7C39_N27;R7C39_N272_N270;1;R17C25_E26;R17C25_E232_E260;1;R17C27_E26;R17C27_E262_E260;1;R17C29_E27;R17C29_E262_E270;1;R17C31_E22;R17C31_E272_E220;1;R17C33_E23;R17C33_E222_E230;1;R17C35_E23;R17C35_E232_E230;1;R17C37_E26;R17C37_E232_E260;1;R17C39_E26;R17C39_E262_E260;1;R17C41_E26;R17C41_E262_E260;1;R17C43_E27;R17C43_E262_E270;1;R17C45_E22;R17C45_E272_E220;1;R17C46_D0;R17C46_E221_D0;1;R13C25_E26;R13C25_N262_E260;1;R13C27_E26;R13C27_E262_E260;1;R13C29_E26;R13C29_E262_E260;1;R13C31_E26;R13C31_E262_E260;1;R13C33_E26;R13C33_E262_E260;1;R13C35_E27;R13C35_E262_E270;1;R13C37_E27;R13C37_E272_E270;1;R13C39_E22;R13C39_E272_E220;1;R13C41_E81;R13C41_E222_E810;1;R13C46_E10;R13C46_W818_E100;1;R13C46_C0;R13C46_E100_C0;1;R29C11_Q6;;1;R29C11_N26;R29C11_Q6_N260;1;R27C11_N26;R27C11_N262_N260;1;R25C11_N26;R25C11_N262_N260;1;R23C11_E26;R23C11_N262_E260;1;R23C13_E27;R23C13_E262_E270;1;R23C15_N27;R23C15_E272_N270;1;R21C15_E27;R21C15_N272_E270;1;R21C17_N27;R21C17_E272_N270;1;R19C17_N22;R19C17_N272_N220;1;R17C17_E22;R17C17_N222_E220;1;R17C19_E22;R17C19_E222_E220;1;R17C21_E22;R17C21_E222_E220;1;R17C23_E23;R17C23_E222_E230;1;R17C25_N23;R17C25_E232_N230;1;R15C25_N26;R15C25_N232_N260;1;R13C25_N27;R13C25_N262_N270;1;R11C25_E27;R11C25_N272_E270;1;R11C27_N27;R11C27_E272_N270;1;R9C27_E27;R9C27_N272_E270;1;R9C29_E27;R9C29_E272_E270;1;R9C31_N27;R9C31_E272_N270;1;R7C31_E27;R7C31_N272_E270;1;R7C33_N27;R7C33_E272_N270;1;R5C33_N22;R5C33_N272_N220;1;R3C33_D0;R3C33_N222_D0;1",
+            "hdlname": "error_injector encoded_word",
+            "src": "../design/module_top.sv:32.28-36.6|../design/module_error_injection.sv:2.24-2.36",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O[0]": {
+          "hide_name": 0,
+          "bits": [ 3877537 ] ,
+          "attributes": {
+            "ROUTING": "R3C33_A1;R3C33_E271_A1;1;R4C22_OF3;;1;R4C22_E23;R4C22_OF3_E230;1;R4C24_E23;R4C24_E232_E230;1;R4C26_E26;R4C26_E232_E260;1;R4C28_E26;R4C28_E262_E260;1;R4C30_E27;R4C30_E262_E270;1;R4C32_N27;R4C32_E272_N270;1;R3C32_E27;R3C32_N271_E270;1;R3C33_A0;R3C33_E271_A0;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1": {
+          "hide_name": 0,
+          "bits": [ 3877536 ] ,
+          "attributes": {
+            "ROUTING": "R4C22_OF1;;1;R4C22_I1MUX3;R4C22_OF1_DUMMY_I1MUX3;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:163.13-163.15"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I0": {
+          "hide_name": 0,
+          "bits": [ 3877535 ] ,
+          "attributes": {
+            "ROUTING": "R4C22_OF5;;1;R4C22_I0MUX3;R4C22_OF5_DUMMY_I0MUX3;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:163.9-163.11"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_O[2]": {
+          "hide_name": 0,
+          "bits": [ 3877532 ] ,
+          "attributes": {
+            "ROUTING": "R3C39_N27;R3C39_E272_N270;1;R2C39_X06;R2C39_N271_X06;1;R2C39_A4;R2C39_X06_A4;1;R2C39_E26;R2C39_N261_E260;1;R2C41_X07;R2C41_E262_X07;1;R2C41_A4;R2C41_X07_A4;1;R3C33_C1;R3C33_X01_C1;1;R3C37_N26;R3C37_E262_N260;1;R2C37_X03;R2C37_N261_X03;1;R2C37_A6;R2C37_X03_A6;1;R3C37_E27;R3C37_E262_E270;1;R3C38_N27;R3C38_E271_N270;1;R2C38_A3;R2C38_N271_A3;1;R3C33_E23;R3C33_E222_E230;1;R3C35_E26;R3C35_E232_E260;1;R3C37_E26;R3C37_E262_E260;1;R3C39_N26;R3C39_E262_N260;1;R2C39_C1;R2C39_N261_C1;1;R3C21_OF6;;1;R3C21_E26;R3C21_OF6_E260;1;R3C23_E27;R3C23_E262_E270;1;R3C25_E27;R3C25_E272_E270;1;R3C27_E27;R3C27_E272_E270;1;R3C29_E22;R3C29_E272_E220;1;R3C31_E22;R3C31_E222_E220;1;R3C33_X01;R3C33_E222_X01;1;R3C33_C0;R3C33_X01_C0;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "button_IBUF_I_O_MUX2_LUT5_S0_I0": {
+          "hide_name": 0,
+          "bits": [ 3877531 ] ,
+          "attributes": {
+            "ROUTING": "R3C21_F6;;1;R3C21_I0MUX6;R3C21_F6_DUMMY_I0MUX6;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:151.9-151.11"
+          }
+        },
+        "button_IBUF_I_O_LUT4_I1_F": {
+          "hide_name": 0,
+          "bits": [ 3877529 ] ,
+          "attributes": {
+            "ROUTING": "R3C21_F7;;1;R3C21_I1MUX6;R3C21_F7_DUMMY_I1MUX6;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:151.13-151.15"
+          }
+        },
+        "button_IBUF_I_O_ALU_COUT_SUM[0]": {
+          "hide_name": 0,
+          "bits": [ 3877526 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 1 2",
+            "src": "../design/module_top.sv:40.30-40.50|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/arith_map.v:34.28-34.29",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "button_IBUF_I_O[0]": {
+          "hide_name": 0,
+          "bits": [ 3877525 ] ,
+          "attributes": {
+            "ROUTING": "R4C22_D0;R4C22_X03_D0;1;R4C22_X07;R4C22_W261_X07;1;R4C22_D4;R4C22_X07_D4;1;R4C22_D3;R4C22_X03_D3;1;R4C22_D1;R4C22_X03_D1;1;R3C21_X03;R3C21_N261_X03;1;R3C21_A7;R3C21_X03_A7;1;R4C22_N26;R4C22_W261_N260;1;R4C22_D5;R4C22_N260_D5;1;R4C21_N26;R4C21_W262_N260;1;R3C21_X05;R3C21_N261_X05;1;R3C21_B1;R3C21_X05_B1;1;R29C23_Q6;;1;R29C23_N13;R29C23_Q6_N130;1;R28C23_N23;R28C23_N131_N230;1;R26C23_N26;R26C23_N232_N260;1;R24C23_N26;R24C23_N262_N260;1;R22C23_N26;R22C23_N262_N260;1;R20C23_N26;R20C23_N262_N260;1;R18C23_N26;R18C23_N262_N260;1;R16C23_N27;R16C23_N262_N270;1;R14C23_N22;R14C23_N272_N220;1;R12C23_N22;R12C23_N222_N220;1;R10C23_N23;R10C23_N222_N230;1;R8C23_N23;R8C23_N232_N230;1;R6C23_N26;R6C23_N232_N260;1;R4C23_W26;R4C23_N262_W260;1;R4C22_X03;R4C22_W261_X03;1;R4C22_D2;R4C22_X03_D2;1",
+            "hdlname": "error_injector error_position",
+            "src": "../design/module_top.sv:32.28-36.6|../design/module_error_injection.sv:3.24-3.38",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "button_IBUF_I_O_ALU_COUT_SUM[1]": {
+          "hide_name": 0,
+          "bits": [ 3877522 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 1 2",
+            "src": "../design/module_top.sv:40.30-40.50|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/arith_map.v:34.28-34.29",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "button_IBUF_I_O[3]": {
+          "hide_name": 0,
+          "bits": [ 3877521 ] ,
+          "attributes": {
+            "ROUTING": "R4C22_B7;R4C22_X08_B7;1;R4C22_B4;R4C22_X08_B4;1;R4C22_B5;R4C22_X08_B5;1;R4C22_B2;R4C22_N231_B2;1;R3C21_B2;R3C21_N232_B2;1;R4C22_X08;R4C22_N231_X08;1;R4C22_B6;R4C22_X08_B6;1;R4C22_B0;R4C22_N231_B0;1;R5C21_N23;R5C21_W232_N230;1;R3C21_X02;R3C21_N232_X02;1;R3C21_D7;R3C21_X02_D7;1;R4C22_B3;R4C22_N231_B3;1;R29C23_F6;;1;R29C23_N26;R29C23_F6_N260;1;R27C23_N26;R27C23_N262_N260;1;R25C23_N26;R25C23_N262_N260;1;R23C23_N27;R23C23_N262_N270;1;R21C23_N22;R21C23_N272_N220;1;R19C23_N22;R19C23_N222_N220;1;R17C23_N22;R17C23_N222_N220;1;R15C23_N23;R15C23_N222_N230;1;R13C23_N26;R13C23_N232_N260;1;R11C23_N27;R11C23_N262_N270;1;R9C23_N22;R9C23_N272_N220;1;R7C23_N23;R7C23_N222_N230;1;R5C23_W23;R5C23_N232_W230;1;R5C22_N23;R5C22_W231_N230;1;R4C22_B1;R4C22_N231_B1;1",
+            "hdlname": "error_injector error_position",
+            "src": "../design/module_top.sv:32.28-36.6|../design/module_error_injection.sv:3.24-3.38",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "button_IBUF_I_O_ALU_COUT_SUM_ALU_SUM_COUT[1]": {
+          "hide_name": 0,
+          "bits": [ 3877519 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "../design/module_top.sv:40.30-40.50|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/arith_map.v:52.24-52.25",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "button_IBUF_I_O_ALU_COUT_SUM[2]": {
+          "hide_name": 0,
+          "bits": [ 3877516 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "unused_bits": "0 1 2",
+            "src": "../design/module_top.sv:40.30-40.50|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/arith_map.v:34.28-34.29",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "$PACKER_VCC_NET": {
+          "hide_name": 1,
+          "bits": [ 3877688 ] ,
+          "attributes": {
+            "ROUTING": "R1C1_N20;R1C1_VCC_N200;1;R1C1_C4;R1C1_S201_C4;1;R3C21_C2;R3C21_X04_C2;1;R3C21_C1;R3C21_X04_C1;1;R3C21_A3;R3C21_E200_A3;1;R3C21_C0;R3C21_X04_C0;1;R1C6_N22;R1C6_VCC_N220;1;R1C6_D1;R1C6_S221_D1;1;R3C21_E20;R3C21_VCC_E200;1;R3C21_A2;R3C21_E200_A2;1;R3C21_X04;R3C21_VCC_X04;1;R3C21_C3;R3C21_X04_C3;1;VCC;;1;R1C41_E27;R1C41_VCC_E270;1;R1C41_D1;R1C41_E270_D1;1"
+          }
+        },
+        "button_IBUF_I_O[2]": {
+          "hide_name": 0,
+          "bits": [ 3877481 ] ,
+          "attributes": {
+            "ROUTING": "R4C22_A1;R4C22_X02_A1;1;R5C21_N26;R5C21_N232_N260;1;R3C21_X01;R3C21_N262_X01;1;R3C21_B3;R3C21_X01_B3;1;R7C21_N22;R7C21_N222_N220;1;R5C21_N22;R5C21_N222_N220;1;R3C21_C7;R3C21_N222_C7;1;R4C22_A4;R4C22_N232_A4;1;R4C22_A2;R4C22_X02_A2;1;R4C22_A5;R4C22_N232_A5;1;R4C22_A3;R4C22_X02_A3;1;R4C22_A6;R4C22_N232_A6;1;R4C22_X02;R4C22_N232_X02;1;R4C22_A0;R4C22_X02_A0;1;R29C13_Q6;;1;R29C13_N26;R29C13_Q6_N260;1;R27C13_E26;R27C13_N262_E260;1;R27C15_E27;R27C15_E262_E270;1;R27C17_N27;R27C17_E272_N270;1;R25C17_E27;R25C17_N272_E270;1;R25C19_E22;R25C19_E272_E220;1;R25C21_N22;R25C21_E222_N220;1;R23C21_N22;R23C21_N222_N220;1;R21C21_N23;R21C21_N222_N230;1;R19C21_N23;R19C21_N232_N230;1;R17C21_N23;R17C21_N232_N230;1;R15C21_N26;R15C21_N232_N260;1;R13C21_N27;R13C21_N262_N270;1;R11C21_N27;R11C21_N272_N270;1;R9C21_N22;R9C21_N272_N220;1;R7C21_N23;R7C21_N222_N230;1;R6C21_E23;R6C21_N231_E230;1;R6C22_N23;R6C22_E231_N230;1;R4C22_A7;R4C22_N232_A7;1",
+            "hdlname": "error_injector error_position",
+            "src": "../design/module_top.sv:32.28-36.6|../design/module_error_injection.sv:3.24-3.38",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "button_IBUF_I_O[1]": {
+          "hide_name": 0,
+          "bits": [ 3877479 ] ,
+          "attributes": {
+            "ROUTING": "R3C21_F4;;1;R3C21_X07;R3C21_F4_X07;1;R3C21_B7;R3C21_X07_B7;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "button_IBUF_I_O_ALU_COUT_SUM_ALU_SUM_COUT[2]": {
+          "hide_name": 0,
+          "bits": [ 3877478 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "../design/module_top.sv:40.30-40.50|c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/arith_map.v:52.24-52.25",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "button_IBUF_I_O[4]": {
+          "hide_name": 0,
+          "bits": [ 3877476 ] ,
+          "attributes": {
+            "ROUTING": "R1C2_F6;;1;R1C2_E26;R1C2_F6_E260;1;R1C4_E26;R1C4_E262_E260;1;R1C6_S26;R1C6_E262_S260;1;R3C6_E26;R3C6_S262_E260;1;R3C8_E27;R3C8_E262_E270;1;R3C10_E22;R3C10_E272_E220;1;R3C12_E22;R3C12_E222_E220;1;R3C14_E23;R3C14_E222_E230;1;R3C16_E26;R3C16_E232_E260;1;R3C18_E26;R3C18_E262_E260;1;R3C20_E26;R3C20_E262_E260;1;R3C21_SEL6;R3C21_E261_SEL6;1",
+            "src": "c:\\Users\\Daniel\\DOWNLO~1\\OSS-CA~1\\bin\\../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "display_transmision.hex_output[6]": {
+          "hide_name": 0,
+          "bits": [ 3877613 ] ,
+          "attributes": {
+            "ROUTING": "R2C41_F4;;1;R2C41_SN10;R2C41_F4_SN10;1;R1C41_A0;R1C41_N111_A0;1",
+            "src": "../design/module_top.sv:51.24-54.6|../design/module_bin_to_hexa.sv:3.24-3.34",
+            "hdlname": "display_transmision hex_output"
+          }
+        },
+        "display_transmision.hex_output[2]": {
+          "hide_name": 0,
+          "bits": [ 3877625 ] ,
+          "attributes": {
+            "ROUTING": "R2C38_F3;;1;R2C38_SN10;R2C38_F3_SN10;1;R1C38_A0;R1C38_N111_A0;1",
+            "src": "../design/module_top.sv:51.24-54.6|../design/module_bin_to_hexa.sv:3.24-3.34",
+            "hdlname": "display_transmision hex_output"
+          }
+        },
+        "display_entrada.hex_output[0]": {
+          "hide_name": 0,
+          "bits": [ 3877610 ] ,
+          "attributes": {
+            "ROUTING": "R17C46_F0;;1;R17C46_E10;R17C46_F0_E100;1;R17C47_D1;R17C47_E101_D1;1",
+            "src": "../design/module_top.sv:44.24-47.6|../design/module_bin_to_hexa.sv:3.24-3.34",
+            "hdlname": "display_entrada hex_output"
+          }
+        },
+        "$PACKER_GND_NET": {
+          "hide_name": 1,
+          "bits": [ 3877686 ] ,
+          "attributes": {
+            "ROUTING": "R3C21_D2;R3C21_S270_D2;1;R1C37_N27;R1C37_VSS_N270;1;R1C37_A0;R1C37_S271_A0;1;R3C21_E27;R3C21_VSS_E270;1;R3C21_D1;R3C21_E270_D1;1;R3C21_S27;R3C21_VSS_S270;1;R3C21_D3;R3C21_S270_D3;1;VSS;;1;R3C21_E21;R3C21_VSS_E210;1;R3C21_A1;R3C21_E210_A1;1"
+          }
+        }
+      }
+    }
+  }
+}
