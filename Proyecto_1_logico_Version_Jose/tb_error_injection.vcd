@@ -1,0 +1,68 @@
+$date
+	Sun Apr 05 18:15:21 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_error_injection $end
+$var wire 7 ! error_injected_word [6:0] $end
+$var reg 7 " encoded_word [6:0] $end
+$var reg 3 # error_position [2:0] $end
+$scope module dut $end
+$var wire 7 $ encoded_word [6:0] $end
+$var wire 3 % error_position [2:0] $end
+$var reg 7 & error_injected_word [6:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b110011 &
+b0 %
+b110011 $
+b0 #
+b110011 "
+b110011 !
+$end
+#10000
+b110010 !
+b110010 &
+b1 #
+b1 %
+#20000
+b110001 !
+b110001 &
+b10 #
+b10 %
+#30000
+b110111 !
+b110111 &
+b11 #
+b11 %
+#40000
+b111011 !
+b111011 &
+b100 #
+b100 %
+#50000
+b100011 !
+b100011 &
+b101 #
+b101 %
+#60000
+b10011 !
+b10011 &
+b110 #
+b110 %
+#70000
+b1110011 !
+b1110011 &
+b111 #
+b111 %
+#80000

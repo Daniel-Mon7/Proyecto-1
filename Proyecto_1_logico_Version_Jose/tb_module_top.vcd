@@ -1,0 +1,148 @@
+$date
+	Sun Apr 05 18:28:13 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_module_top $end
+$var wire 1 ! anodo_p0 $end
+$var wire 1 " anodo_p1 $end
+$var wire 4 # codigo_bin_led_p0 [3:0] $end
+$var wire 7 $ catodo_trans [6:0] $end
+$var wire 7 % catodo_p0 [6:0] $end
+$var reg 1 & button $end
+$var reg 4 ' codigo_gray_pi [3:0] $end
+$var reg 3 ( pos_error_pi [2:0] $end
+$scope module dut $end
+$var wire 1 ! anodo_p0 $end
+$var wire 1 " anodo_p1 $end
+$var wire 1 & button $end
+$var wire 4 ) codigo_bin_led_p0 [3:0] $end
+$var wire 4 * codigo_gray_pi [3:0] $end
+$var wire 3 + pos_error_pi [2:0] $end
+$var wire 7 , word_with_error [6:0] $end
+$var wire 7 - final_word [6:0] $end
+$var wire 7 . codeword [6:0] $end
+$var wire 7 / catodo_trans [6:0] $end
+$var wire 7 0 catodo_p0 [6:0] $end
+$scope module display_entrada $end
+$var wire 4 1 binary_input [3:0] $end
+$var wire 7 2 hex_output [6:0] $end
+$upscope $end
+$scope module display_transmision $end
+$var wire 4 3 binary_input [3:0] $end
+$var wire 7 4 hex_output [6:0] $end
+$upscope $end
+$scope module encoder $end
+$var wire 4 5 dip_switch [3:0] $end
+$var wire 1 6 y1 $end
+$var wire 1 7 y2 $end
+$var wire 1 8 y4 $end
+$var wire 1 9 x7 $end
+$var wire 1 : x6 $end
+$var wire 1 ; x5 $end
+$var wire 1 < x3 $end
+$var wire 3 = parity_bits [2:0] $end
+$var wire 7 > encoded_word [6:0] $end
+$upscope $end
+$scope module error_injector $end
+$var wire 7 ? encoded_word [6:0] $end
+$var wire 3 @ error_position [2:0] $end
+$var reg 7 A error_injected_word [6:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b110011 A
+b0 @
+b110011 ?
+b110011 >
+b10 =
+1<
+0;
+1:
+19
+08
+17
+06
+b1011 5
+b110000 4
+b11 3
+b11 2
+b1011 1
+b11 0
+b110000 /
+b110011 .
+b110011 -
+b110011 ,
+b0 +
+b1011 *
+b1011 )
+b0 (
+b1011 '
+0&
+b11 %
+b110000 $
+b1011 #
+1"
+1!
+$end
+#10000
+1&
+#20000
+b100100 $
+b100100 /
+b100100 4
+b10 3
+b110010 -
+b110010 ,
+b110010 A
+b1 (
+b1 +
+b1 @
+#30000
+b110000 $
+b110000 /
+b110000 4
+b11 3
+b1110011 -
+b1110011 ,
+b1110011 A
+b111 (
+b111 +
+b111 @
+#40000
+b100001 $
+b100001 /
+b100001 4
+b10010 %
+b10010 0
+b10010 2
+b1101 3
+b101101 -
+b101101 ,
+b101101 A
+0<
+1;
+b100101 .
+b100101 >
+b100101 ?
+0:
+b100 (
+b100 +
+b100 @
+b101 #
+b101 )
+b101 '
+b101 *
+b101 1
+b101 5
+#50000

@@ -1,0 +1,85 @@
+#! 
+:ivl_version "13.0 (devel)" "(s20221226-103-g418bbc14b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "c:\Users\MARIAN~1\Desktop\TEC\1S2026\LOGICO\PROYEC~1\OSS-CA~1\lib\ivl\system.vpi";
+:vpi_module "c:\Users\MARIAN~1\Desktop\TEC\1S2026\LOGICO\PROYEC~1\OSS-CA~1\lib\ivl\vhdl_sys.vpi";
+:vpi_module "c:\Users\MARIAN~1\Desktop\TEC\1S2026\LOGICO\PROYEC~1\OSS-CA~1\lib\ivl\vhdl_textio.vpi";
+:vpi_module "c:\Users\MARIAN~1\Desktop\TEC\1S2026\LOGICO\PROYEC~1\OSS-CA~1\lib\ivl\v2005_math.vpi";
+:vpi_module "c:\Users\MARIAN~1\Desktop\TEC\1S2026\LOGICO\PROYEC~1\OSS-CA~1\lib\ivl\va_math.vpi";
+:vpi_module "c:\Users\MARIAN~1\Desktop\TEC\1S2026\LOGICO\PROYEC~1\OSS-CA~1\lib\ivl\v2009.vpi";
+S_0000000005fc7390 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0000000005fc7520 .scope module, "tb_encoder" "tb_encoder" 3 3;
+ .timescale -9 -12;
+v0000000005fc6750_0 .var "dip_switch", 3 0;
+v0000000005fc6570_0 .net "encoded_word", 6 0, L_0000000005fc5df0;  1 drivers
+v0000000005fc67f0_0 .net "parity_bits", 2 0, L_0000000005fc5e90;  1 drivers
+S_0000000005fc6940 .scope module, "dut" "module_encoder" 3 9, 4 1 0, S_0000000005fc7520;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "dip_switch";
+    .port_info 1 /OUTPUT 3 "parity_bits";
+    .port_info 2 /OUTPUT 7 "encoded_word";
+L_0000000004069fe0 .functor BUFZ 4, v0000000005fc6750_0, C4<0000>, C4<0000>, C4<0000>;
+L_000000000406a050 .functor XOR 1, L_0000000005fc5a30, L_0000000005fc5b70, C4<0>, C4<0>;
+L_0000000004069bf0 .functor XOR 1, L_000000000406a050, L_0000000005fc5cb0, C4<0>, C4<0>;
+L_0000000004069d40 .functor XOR 1, L_0000000005fc5a30, L_0000000005fc5c10, C4<0>, C4<0>;
+L_0000000004069b10 .functor XOR 1, L_0000000004069d40, L_0000000005fc5cb0, C4<0>, C4<0>;
+L_0000000004069f00 .functor XOR 1, L_0000000005fc5b70, L_0000000005fc5c10, C4<0>, C4<0>;
+L_0000000004069c60 .functor XOR 1, L_0000000004069f00, L_0000000005fc5cb0, C4<0>, C4<0>;
+v0000000005fc61b0_0 .net *"_ivl_11", 0 0, L_0000000004069d40;  1 drivers
+v0000000005fc58f0_0 .net *"_ivl_15", 0 0, L_0000000004069f00;  1 drivers
+v0000000005fc5d50_0 .net *"_ivl_6", 3 0, L_0000000004069fe0;  1 drivers
+v0000000005fc6250_0 .net *"_ivl_7", 0 0, L_000000000406a050;  1 drivers
+v0000000005fc62f0_0 .net "dip_switch", 3 0, v0000000005fc6750_0;  1 drivers
+v0000000005fc6390_0 .net "encoded_word", 6 0, L_0000000005fc5df0;  alias, 1 drivers
+v0000000005fc6430_0 .net "parity_bits", 2 0, L_0000000005fc5e90;  alias, 1 drivers
+v0000000005fc64d0_0 .net "x3", 0 0, L_0000000005fc5a30;  1 drivers
+v0000000005fc6070_0 .net "x5", 0 0, L_0000000005fc5b70;  1 drivers
+v0000000005fc5fd0_0 .net "x6", 0 0, L_0000000005fc5c10;  1 drivers
+v0000000005fc6110_0 .net "x7", 0 0, L_0000000005fc5cb0;  1 drivers
+v0000000005fc5990_0 .net "y1", 0 0, L_0000000004069bf0;  1 drivers
+v0000000005fc66b0_0 .net "y2", 0 0, L_0000000004069b10;  1 drivers
+v0000000005fc6610_0 .net "y4", 0 0, L_0000000004069c60;  1 drivers
+L_0000000005fc5a30 .part L_0000000004069fe0, 3, 1;
+L_0000000005fc5b70 .part L_0000000004069fe0, 2, 1;
+L_0000000005fc5c10 .part L_0000000004069fe0, 1, 1;
+L_0000000005fc5cb0 .part L_0000000004069fe0, 0, 1;
+LS_0000000005fc5df0_0_0 .concat [ 1 1 1 1], L_0000000005fc5cb0, L_0000000005fc5c10, L_0000000005fc5b70, L_0000000004069c60;
+LS_0000000005fc5df0_0_4 .concat [ 1 1 1 0], L_0000000005fc5a30, L_0000000004069b10, L_0000000004069bf0;
+L_0000000005fc5df0 .concat [ 4 3 0 0], LS_0000000005fc5df0_0_0, LS_0000000005fc5df0_0_4;
+L_0000000005fc5e90 .concat [ 1 1 1 0], L_0000000004069c60, L_0000000004069b10, L_0000000004069bf0;
+    .scope S_0000000005fc7520;
+T_0 ;
+    %vpi_call/w 3 16 "$display", "Inicio testbench module_encoder" {0 0 0};
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0000000005fc6750_0, 0, 4;
+    %delay 10000, 0;
+    %vpi_call/w 3 19 "$display", "dip_switch=%b parity_bits=%b encoded_word=%b", v0000000005fc6750_0, v0000000005fc67f0_0, v0000000005fc6570_0 {0 0 0};
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0000000005fc6750_0, 0, 4;
+    %delay 10000, 0;
+    %vpi_call/w 3 22 "$display", "dip_switch=%b parity_bits=%b encoded_word=%b", v0000000005fc6750_0, v0000000005fc67f0_0, v0000000005fc6570_0 {0 0 0};
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0000000005fc6750_0, 0, 4;
+    %delay 10000, 0;
+    %vpi_call/w 3 25 "$display", "dip_switch=%b parity_bits=%b encoded_word=%b", v0000000005fc6750_0, v0000000005fc67f0_0, v0000000005fc6570_0 {0 0 0};
+    %pushi/vec4 11, 0, 4;
+    %store/vec4 v0000000005fc6750_0, 0, 4;
+    %delay 10000, 0;
+    %vpi_call/w 3 28 "$display", "dip_switch=%b parity_bits=%b encoded_word=%b", v0000000005fc6750_0, v0000000005fc67f0_0, v0000000005fc6570_0 {0 0 0};
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0000000005fc6750_0, 0, 4;
+    %delay 10000, 0;
+    %vpi_call/w 3 31 "$display", "dip_switch=%b parity_bits=%b encoded_word=%b", v0000000005fc6750_0, v0000000005fc67f0_0, v0000000005fc6570_0 {0 0 0};
+    %vpi_call/w 3 33 "$display", "eso fue todo amigos" {0 0 0};
+    %vpi_call/w 3 35 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "src/sim/tb_encoder.sv";
+    "src/design/module_encoder.sv";

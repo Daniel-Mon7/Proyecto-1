@@ -1,0 +1,173 @@
+Info: Series:GW1N-9C Device:GW1NR-9C Package:QFN88P Speed:C6/I5
+Info: Cell anodo_p0[0] not found
+Info: Cell anodo_p0[0] not found
+
+Info: Packing constants..
+Info: Packing Shadow RAM..
+Info: Packing GSR..
+Info: Packing IOs..
+Info: Packing diff IOs..
+Info: Packing IO logic..
+Info: Packing wide LUTs..
+Info: Packing LUT5s..
+Info: Packing LUT6s..
+Info: Packing LUT7s..
+Info: Packing LUT8s..
+Info: Packing ALUs..
+Info: Packing LUT-FFs..
+Info: Packing non-LUT FFs..
+Info: Packing PLLs..
+Info: Checksum: 0x3ba05900
+
+Info: Annotating ports with timing budgets for target frequency 27.00 MHz
+Info: Checksum: 0x3ba05900
+
+Info: Device utilisation:
+Info: 	                 VCC:     1/    1   100%
+Info: 	               SLICE:    30/ 8640     0%
+Info: 	                 IOB:    28/  274    10%
+Info: 	                ODDR:     0/  274     0%
+Info: 	           MUX2_LUT5:     6/ 4320     0%
+Info: 	           MUX2_LUT6:     2/ 2160     0%
+Info: 	           MUX2_LUT7:     1/ 1080     0%
+Info: 	           MUX2_LUT8:     0/ 1056     0%
+Info: 	                 GND:     1/    1   100%
+Info: 	                RAMW:     0/  270     0%
+Info: 	                 GSR:     1/    1   100%
+Info: 	                 OSC:     0/    1     0%
+Info: 	                rPLL:     0/    2     0%
+
+Info: Placed 27 cells based on constraints.
+Info: Creating initial analytic placement for 19 cells, random placement wirelen = 919.
+Info:     at initial placer iter 0, wirelen = 508
+Info:     at initial placer iter 1, wirelen = 474
+Info:     at initial placer iter 2, wirelen = 462
+Info:     at initial placer iter 3, wirelen = 458
+Info: Running main analytical placer, max placement attempts per cell = 10000.
+Info:     at iteration #1, type SLICE: wirelen solved = 457, spread = 461, legal = 464; time = 0.00s
+Info:     at iteration #1, type VCC: wirelen solved = 464, spread = 464, legal = 464; time = 0.00s
+Info:     at iteration #1, type MUX2_LUT5: wirelen solved = 469, spread = 469, legal = 469; time = 0.00s
+Info:     at iteration #1, type MUX2_LUT7: wirelen solved = 467, spread = 467, legal = 467; time = 0.00s
+Info:     at iteration #1, type GND: wirelen solved = 467, spread = 467, legal = 467; time = 0.00s
+Info:     at iteration #1, type GSR: wirelen solved = 467, spread = 467, legal = 467; time = 0.00s
+Info:     at iteration #1, type ALL: wirelen solved = 456, spread = 472, legal = 468; time = 0.00s
+Info: HeAP Placer Time: 0.02s
+Info:   of which solving equations: 0.00s
+Info:   of which spreading cells: 0.00s
+Info:   of which strict legalisation: 0.00s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 0, wirelen = 468
+Info:   at iteration #4: temp = 0.000000, timing cost = 0, wirelen = 452 
+Info: SA placement time 0.00s
+
+Info: Max delay <async> -> <async>: 29.09 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [  7945,   9100) |* 
+Info: [  9100,  10255) | 
+Info: [ 10255,  11410) |** 
+Info: [ 11410,  12565) |****** 
+Info: [ 12565,  13720) |*********** 
+Info: [ 13720,  14875) |************ 
+Info: [ 14875,  16030) |************** 
+Info: [ 16030,  17185) |********** 
+Info: [ 17185,  18340) |********* 
+Info: [ 18340,  19495) |* 
+Info: [ 19495,  20650) | 
+Info: [ 20650,  21805) |******** 
+Info: [ 21805,  22960) | 
+Info: [ 22960,  24115) |********** 
+Info: [ 24115,  25270) | 
+Info: [ 25270,  26425) |****************** 
+Info: [ 26425,  27580) |** 
+Info: [ 27580,  28735) | 
+Info: [ 28735,  29890) | 
+Info: [ 29890,  31045) |** 
+Info: Checksum: 0x7b2eeb05
+Info: Find global nets...
+Info: Routing globals...
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 148 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:        160 |        5        155 |    5   155 |         0|       0.32       0.32|
+Info: Routing complete.
+Info: Router1 time 0.32s
+Info: Checksum: 0x007ac95b
+
+Info: Critical path report for cross-domain path '<async>' -> '<async>':
+Info: curr total
+Info:  0.0  0.0  Source encoder.x3_IBUF_O$iob.O
+Info:  9.9  9.9    Net codeword[4] budget 37.037037 ns (7,28) -> (21,3)
+Info:                Sink button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_I1_MUX2_LUT5_O_I1_LUT4_F_LC.C
+Info:                Defined in:
+Info:                  ../design/module_top.sv:32.28-36.6
+Info:                  ../design/module_error_injection.sv:2.24-2.36
+Info:  0.8 10.7  Source button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_I1_MUX2_LUT5_O_I1_LUT4_F_LC.F
+Info:  0.3 11.1    Net button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_I1_MUX2_LUT5_O_I1 budget 6.975408 ns (21,3) -> (21,3)
+Info:                Sink button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_I1_MUX2_LUT5_O_LC.I1
+Info:                Defined in:
+Info:                  c:\Users\Daniel\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_map.v:165.42-165.67
+Info:                  c:\Users\Daniel\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_map.v:159.41-159.66
+Info:                  c:\Users\Daniel\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_map.v:151.13-151.15
+Info:  0.2 11.2  Source button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_I1_MUX2_LUT5_O_LC.OF
+Info:  0.3 11.6    Net button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_I1 budget 6.975408 ns (21,3) -> (21,3)
+Info:                Sink button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_LC.I1
+Info:                Defined in:
+Info:                  c:\Users\Daniel\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_map.v:165.42-165.67
+Info:                  c:\Users\Daniel\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_map.v:157.13-157.15
+Info:  0.4 11.9  Source button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1_MUX2_LUT6_O_LC.OF
+Info:  0.3 12.2    Net button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_I1 budget 6.975408 ns (21,3) -> (21,3)
+Info:                Sink button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_LC.I1
+Info:                Defined in:
+Info:                  c:\Users\Daniel\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_map.v:163.13-163.15
+Info:  0.5 12.8  Source button_IBUF_I_O_MUX2_LUT5_S0_O_MUX2_LUT7_O_LC.OF
+Info:  3.4 16.1    Net button_IBUF_I_O_MUX2_LUT5_S0_O[0] budget 6.975408 ns (21,3) -> (32,2)
+Info:                Sink display_transmision.hex_output_MUX2_LUT5_O_I1_LUT4_F_LC.A
+Info:                Defined in:
+Info:                  c:\Users\Daniel\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_map.v:130.20-130.21
+Info:  1.0 17.2  Source display_transmision.hex_output_MUX2_LUT5_O_I1_LUT4_F_LC.F
+Info:  0.3 17.5    Net display_transmision.hex_output_MUX2_LUT5_O_I1 budget 4.809863 ns (32,2) -> (32,2)
+Info:                Sink display_transmision.hex_output_MUX2_LUT5_O_LC.I1
+Info:                Defined in:
+Info:                  c:\Users\Daniel\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_map.v:151.13-151.15
+Info:  0.2 17.7  Source display_transmision.hex_output_MUX2_LUT5_O_LC.OF
+Info:  1.9 19.6    Net display_transmision.hex_output[3] budget 4.809863 ns (32,2) -> (37,0)
+Info:                Sink catodo_trans_OBUF_O_3$iob.I
+Info:                Defined in:
+Info:                  ../design/module_top.sv:51.24-54.6
+Info:                  ../design/module_bin_to_hexa.sv:3.24-3.34
+Info: 3.1 ns logic, 16.5 ns routing
+
+Info: Max delay <async> -> <async>: 19.57 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 17466,  18253) |* 
+Info: [ 18253,  19040) | 
+Info: [ 19040,  19827) | 
+Info: [ 19827,  20614) |* 
+Info: [ 20614,  21401) |***** 
+Info: [ 21401,  22188) |*** 
+Info: [ 22188,  22975) |************ 
+Info: [ 22975,  23762) |********** 
+Info: [ 23762,  24549) |************* 
+Info: [ 24549,  25336) |************ 
+Info: [ 25336,  26123) |********* 
+Info: [ 26123,  26910) | 
+Info: [ 26910,  27697) |******** 
+Info: [ 27697,  28484) |******** 
+Info: [ 28484,  29271) |** 
+Info: [ 29271,  30058) |******** 
+Info: [ 30058,  30845) |*********** 
+Info: [ 30845,  31632) |* 
+Info: [ 31632,  32419) | 
+Info: [ 32419,  33206) |** 
+
+Info: Program finished normally.
