@@ -114,4 +114,79 @@ module module_bin_to_hexa (
 endmodule
 
 ```
+#### Funcionamiento
 Este módulo lo que nos permite es la visualización de la palabra que estemos queriendo transmitir en un 7 segmentos, para esto primero debemos de recibir la palbra de 4 bits, seguido mendiante la sentencia assign buscaremos el caso correspondiente a la entrada, cuando ya la halla encontrado lo siguiente que hace es mandar un 1 a las posiciones del 7 segmentos que se ocupan encender, por ejemplo para el 8 se ocupan encender los 7 segmentos por lo que se envían 7 1's, si fuera el 3 se encienden los segmentos a, b, c, d y g, por lo que se envía la secuencia de 1001111.
+
+## 2.4 Módulo top
+```
+module module_top (
+    input  logic [3:0] switch,   
+    input  logic [2:0] pos_error,     
+    // Display 1: Mensaje de Entrada
+    output logic [6:0] catodo_p0,        
+    output logic anodo_p0,         // Pin 56
+
+    // Display 2: Mensaje Transmitido (Hamming)
+    output logic [6:0] salida,     
+
+    // LEDs Integrados: Monitor de Entrada
+    output logic [3:0] led 
+);
+
+    // Señales internas
+    logic [6:0] codeword;
+    logic [6:0] word_with_error;
+    logic [6:0] final_word;
+
+    // 1. Codificador Hamming (7,4)
+    module_encoder encoder (
+        .dip_switch(switch),
+        .encoded_word(codeword),
+        .parity_bits() // Ignoramos esta salida es nada para el testbench
+    );
+
+    // 2. Inyector de Error
+    module_error_injection error_injector (
+        .encoded_word(codeword),
+        .error_position(pos_error),
+        .error_injected_word(word_with_error)
+    );
+
+    assign final_word = word_with_error;
+
+    // 4. Visualización en el Display  (Entrada Original)
+    module_bin_to_hexa display_entrada (
+        .binary_input(switch),
+        .hex_output(catodo_p0)
+    );
+
+    // 5. Activación de Ánodos (Asumiendo Cátodo Común, enviar 1 para activar)
+    assign anodo_p0 = 1'b1; 
+    assign anodo_p1 = 1'b1;
+    assign salida = final_word; // Invertimos para cátodo común
+
+    // 6. LEDs de monitoreo en la FPGA
+    assign led = ~switch;
+
+endmodule
+```
+#### Funcionamiento
+Este bloque final integra cada uno de los módulos anteriores dandoles la entrada de datos correspondientes y extrayendo los resultados necesarios (los bits de pariedad no son datos necesarios) que después seran empleados por la FPGA para transmitirlos a la parte receptora y al 7 segmentos.
+La parte receptora recibira el mensaje emcriptado mientras que el 7 segmentos muestra el mensaje original.
+
+# 3. Consumo de recursos
+<img width="402" height="464" alt="image" src="https://github.com/user-attachments/assets/99f24125-f789-42e4-a896-51e901710742" />
+
+El proceso de síntesis del diseño en la FPGA refleja una implementación altamente eficiente y de naturaleza puramente combinacional. De acuerdo con las estadísticas obtenidas, el sistema requiere un total de 27 tablas de búsqueda (LUTs) y 9 multiplexores de jerarquía superior (MUX2) para ejecutar la lógica del codificador Hamming y la decodificación de los displays, lo cual representa un uso mínimo de los recursos lógicos del dispositivo. Cabe destacar la ausencia de Flip-Flops (FFs) y bloques de memoria, lo que confirma que el flujo de datos no depende de un reloj secuencial, minimizando así la latencia de procesamiento.
+
+# 4. Problemas encontrados durante el proyecto
+### Curva de aprendizaje: 
+La principal dificultad se encontró en la curva de aprendizaje que conlleva aprender a programar en un nuevo lenguaje y que, además, es HDL, en anteriores cursos solo se habia realizado trabajo con software software. La solución para esto fue buscar recursos en interne como lo son vídeos y foros, aunado a esto se empleo el libro de texto, así como la gran ayuda del asistente del curso que sacó tiempo personal para aclarar dudas y ayudarnos a resolver problemas de la implemenación.
+
+### Modulo de inyección del error.
+Como tal el módulo de inserción de error no es muy complicado, sin embargo, a la hora de realizarlo nos invertía todos los bits del mensaje encríptado (lo cuál no se quería); para solucionarlo investigamos en internet y el compañero Jose encontró que ocupabamos poner un parentesis cuadrado a la par de error_injected_word[n], siendo n el lugar donde se quiere el error.
+
+### No se presentaba la inyección del error a partir de 100:
+Este error fue el que más nos molestó durante la realización del proyecto; durante una semana estuvimos intentando corregirlo sin éxito, sin embargo a menos de dos minutos de la entrega hicimos un cambio en los constraints, específicamente en el pin donde entraba el error, lo movimos del pin 35 al 41 y se arregló el error.
+Desconocemos la razón de porqué este pin causaba el error.
+
