@@ -114,4 +114,4 @@ module module_bin_to_hexa (
 endmodule
 
 ```
-Este módulo lo que nos permite es la visualización de la palabra que estemos queriendo transmitir en un 7 segmentos
+Este módulo lo que nos permite es la visualización de la palabra que estemos queriendo transmitir en un 7 segmentos, para esto primero debemos de recibir la palbra de 4 bits, seguido mendiante la sentencia assign buscaremos el caso correspondiente a la entrada, cuando ya la halla encontrado lo siguiente que hace es mandar un 1 a las posiciones del 7 segmentos que se ocupan encender, por ejemplo para el 8 se ocupan encender los 7 segmentos por lo que se envían 7 1's, si fuera el 3 se encienden los segmentos a, b, c, d y g, por lo que se envía la secuencia de 1001111.
