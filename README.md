@@ -200,28 +200,35 @@ En el código, esta conversión se implementó mediante asignaciones directas pa
                               7'b0000000;    
 
 ```
-Como ejemplo, se toma el segmento "a" del display. Sea la entrada de 4 bits:
+Como ejemplo, se toma el segmento "a" del display. 
+
+Sea la entrada de 4 bits:
+```systemverilog
 
 A B C D
-
+```
 donde A es el bit más significativo y D el menos significativo.
 
 Para la codificación usada en el módulo, el segmento "a" se encuentra encendido para los símbolos:
+```systemverilog
 
 0, 2, 3, 5, 6, 7, 8, 9, A, b, C, d, E y F
-
+```
 y apagado para:
+```systemverilog
 
 1 y 4
-
+```
 Tomando esta tabla de verdad, la función del segmento a puede escribirse como:
+```systemverilog
 
 a(A,B,C,D) = Σm(0, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
-
+```
 Una forma simplificada de esta ecuación es:
+```systemverilog
 
 a = A + B + C + D'
-
+```
 
 Esto puede comprobarse fácilmente porque el segmento a solo se apaga cuando la entrada corresponde a 0001 o 0100, es decir, cuando hay exactamente ciertas combinaciones donde D = 1 o donde ninguno de los términos anteriores activa el segmento. Por lo tanto, la ecuación simplificada permite representar correctamente el comportamiento del segmento sin necesidad de evaluar los 16 casos por separado.
 
