@@ -1,0 +1,360 @@
+$date
+	Thu Apr 09 19:34:24 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_module_top $end
+$var reg 4 ! entry [3:0] $end
+$var reg 1 " inject_error $end
+$var reg 7 # internal_codeword [6:0] $end
+$var reg 7 $ internal_word_err [6:0] $end
+$scope module dut $end
+$var wire 1 % anodo_p0 $end
+$var wire 1 & anodo_p1 $end
+$var wire 1 " button $end
+$var wire 4 ' codigo_bin_led_p0 [3:0] $end
+$var wire 4 ( codigo_gray_pi [3:0] $end
+$var wire 3 ) pos_error_pi [2:0] $end
+$var wire 7 * word_with_error [6:0] $end
+$var wire 7 + final_word [6:0] $end
+$var wire 7 , codeword [6:0] $end
+$var wire 7 - catodo_trans [6:0] $end
+$var wire 7 . catodo_p0 [6:0] $end
+$scope module display_entrada $end
+$var wire 4 / binary_input [3:0] $end
+$var wire 7 0 hex_output [6:0] $end
+$upscope $end
+$scope module display_transmision $end
+$var wire 4 1 binary_input [3:0] $end
+$var wire 7 2 hex_output [6:0] $end
+$upscope $end
+$scope module encoder $end
+$var wire 4 3 dip_switch [3:0] $end
+$var wire 1 4 y1 $end
+$var wire 1 5 y2 $end
+$var wire 1 6 y4 $end
+$var wire 1 7 x7 $end
+$var wire 1 8 x6 $end
+$var wire 1 9 x5 $end
+$var wire 1 : x3 $end
+$var wire 3 ; parity_bits [2:0] $end
+$var wire 7 < encoded_word [6:0] $end
+$upscope $end
+$scope module error_injector $end
+$var wire 7 = encoded_word [6:0] $end
+$var wire 3 > error_position [2:0] $end
+$var reg 7 ? error_injected_word [6:0] $end
+$upscope $end
+$upscope $end
+$scope begin $ivl_for_loop0 $end
+$var integer 32 @ i [31:0] $end
+$upscope $end
+$scope begin $ivl_for_loop1 $end
+$var integer 32 A j [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 A
+b0 @
+b0 ?
+bz >
+b0 =
+b0 <
+b0 ;
+0:
+09
+08
+07
+06
+05
+04
+b0 3
+b1000000 2
+b0 1
+b1000000 0
+b0 /
+b1000000 .
+b1000000 -
+b0 ,
+b0 +
+b0 *
+bz )
+b0 (
+b0 '
+1&
+1%
+bx $
+bz #
+0"
+b0 !
+$end
+#10000
+b10000 -
+b10000 2
+b1001 1
+b1101001 +
+b1101001 *
+b1101001 ?
+16
+15
+b111 ;
+14
+b1111001 .
+b1111001 0
+b1101001 ,
+b1101001 <
+b1101001 =
+17
+b1 '
+b1 !
+b1 (
+b1 /
+b1 3
+b1 @
+#20000
+b1000 -
+b1000 2
+b1010 1
+b100100 .
+b100100 0
+b101010 +
+b101010 *
+b101010 ?
+16
+15
+b11 ;
+04
+18
+b101010 ,
+b101010 <
+b101010 =
+07
+b10 '
+b10 !
+b10 (
+b10 /
+b10 3
+b10 @
+#30000
+b110000 -
+b110000 2
+b110000 .
+b110000 0
+b11 1
+b1000011 +
+b1000011 *
+b1000011 ?
+06
+05
+b100 ;
+14
+b1000011 ,
+b1000011 <
+b1000011 =
+17
+b11 '
+b11 !
+b11 (
+b11 /
+b11 3
+b11 @
+#40000
+b1000000 -
+b1000000 2
+b0 .
+b0 0
+b0 1
+b1110000 +
+06
+b110 ;
+15
+b1110000 *
+b1110000 ?
+08
+07
+b1110000 ,
+b1110000 <
+b1110000 =
+1:
+b1000 '
+b1000 !
+b1000 (
+b1000 /
+b1000 3
+1"
+b100 @
+#50000
+b10000 .
+b10000 0
+b10000 -
+b10000 2
+b1001 1
+b11001 +
+b11001 *
+b11001 ?
+16
+05
+b1 ;
+04
+b11001 ,
+b11001 <
+b11001 =
+17
+b1001 '
+b1001 !
+b1001 (
+b1001 /
+b1001 3
+b1 A
+#60000
+b1000 .
+b1000 0
+b1000 -
+b1000 2
+b1010 1
+b1011010 +
+b1011010 *
+b1011010 ?
+16
+05
+b101 ;
+14
+18
+b1011010 ,
+b1011010 <
+b1011010 =
+07
+b1010 '
+b1010 !
+b1010 (
+b1010 /
+b1010 3
+b10 A
+#70000
+b11 .
+b11 0
+b110000 -
+b110000 2
+b11 1
+b110011 +
+b110011 *
+b110011 ?
+06
+15
+b10 ;
+04
+b110011 ,
+b110011 <
+b110011 =
+17
+b1011 '
+b1011 !
+b1011 (
+b1011 /
+b1011 3
+b11 A
+#80000
+b1000110 .
+b1000110 0
+b1000110 -
+b1000110 2
+b1100 1
+b111100 +
+b111100 *
+b111100 ?
+16
+15
+b11 ;
+04
+19
+08
+b111100 ,
+b111100 <
+b111100 =
+07
+b1100 '
+b1100 !
+b1100 (
+b1100 /
+b1100 3
+b100 A
+#90000
+b100001 .
+b100001 0
+b10010 -
+b10010 2
+b101 1
+b1010101 +
+b1010101 *
+b1010101 ?
+06
+05
+b100 ;
+14
+b1010101 ,
+b1010101 <
+b1010101 =
+17
+b1101 '
+b1101 !
+b1101 (
+b1101 /
+b1101 3
+b101 A
+#100000
+b110 .
+b110 0
+b10 -
+b10 2
+b110 1
+b10110 +
+b10110 *
+b10110 ?
+06
+05
+b0 ;
+04
+18
+b10110 ,
+b10110 <
+b10110 =
+07
+b1110 '
+b1110 !
+b1110 (
+b1110 /
+b1110 3
+b110 A
+#110000
+b1110 .
+b1110 0
+b1110 -
+b1110 2
+b1111 1
+b1111111 +
+b1111111 *
+b1111111 ?
+16
+15
+b111 ;
+14
+b1111111 ,
+b1111111 <
+b1111111 =
+17
+b1111 '
+b1111 !
+b1111 (
+b1111 /
+b1111 3
+b111 A
+#120000

@@ -1,0 +1,153 @@
+Info: Series:GW1N-9C Device:GW1NR-9C Package:QFN88P Speed:C6/I5
+Info: Cell anodo_p0[0] not found
+Info: Cell anodo_p0[0] not found
+
+Info: Packing constants..
+Info: Packing Shadow RAM..
+Info: Packing GSR..
+Info: Packing IOs..
+Info: Packing diff IOs..
+Info: Packing IO logic..
+Info: Packing wide LUTs..
+Info: Packing LUT5s..
+Info: Packing LUT6s..
+Info: Packing LUT7s..
+Info: Packing LUT8s..
+Info: Packing ALUs..
+Info: Packing LUT-FFs..
+Info: Packing non-LUT FFs..
+Info: Packing PLLs..
+Info: Checksum: 0x800adcfd
+
+Info: Annotating ports with timing budgets for target frequency 27.00 MHz
+Info: Checksum: 0x800adcfd
+
+Info: Device utilisation:
+Info: 	                 VCC:     1/    1   100%
+Info: 	               SLICE:    27/ 8640     0%
+Info: 	                 IOB:    26/  274     9%
+Info: 	                ODDR:     0/  274     0%
+Info: 	           MUX2_LUT5:     6/ 4320     0%
+Info: 	           MUX2_LUT6:     3/ 2160     0%
+Info: 	           MUX2_LUT7:     0/ 1080     0%
+Info: 	           MUX2_LUT8:     0/ 1056     0%
+Info: 	                 GND:     1/    1   100%
+Info: 	                RAMW:     0/  270     0%
+Info: 	                 GSR:     1/    1   100%
+Info: 	                 OSC:     0/    1     0%
+Info: 	                rPLL:     0/    2     0%
+
+Info: Placed 25 cells based on constraints.
+Info: Creating initial analytic placement for 20 cells, random placement wirelen = 946.
+Info:     at initial placer iter 0, wirelen = 436
+Info:     at initial placer iter 1, wirelen = 426
+Info:     at initial placer iter 2, wirelen = 425
+Info:     at initial placer iter 3, wirelen = 425
+Info: Running main analytical placer, max placement attempts per cell = 10000.
+Info:     at iteration #1, type SLICE: wirelen solved = 425, spread = 441, legal = 439; time = 0.00s
+Info:     at iteration #1, type VCC: wirelen solved = 439, spread = 439, legal = 439; time = 0.00s
+Info:     at iteration #1, type MUX2_LUT6: wirelen solved = 440, spread = 440, legal = 435; time = 0.00s
+Info:     at iteration #1, type GSR: wirelen solved = 435, spread = 435, legal = 435; time = 0.00s
+Info:     at iteration #1, type ALL: wirelen solved = 425, spread = 443, legal = 441; time = 0.00s
+Info: HeAP Placer Time: 0.01s
+Info:   of which solving equations: 0.00s
+Info:   of which spreading cells: 0.00s
+Info:   of which strict legalisation: 0.00s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 0, wirelen = 441
+Info:   at iteration #4: temp = 0.000000, timing cost = 0, wirelen = 418 
+Info: SA placement time 0.01s
+
+Info: Max delay <async> -> <async>: 26.63 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 10406,  11518) |**** 
+Info: [ 11518,  12630) |*** 
+Info: [ 12630,  13742) |******** 
+Info: [ 13742,  14854) |************** 
+Info: [ 14854,  15966) |*************** 
+Info: [ 15966,  17078) |************ 
+Info: [ 17078,  18190) |** 
+Info: [ 18190,  19302) | 
+Info: [ 19302,  20414) |************ 
+Info: [ 20414,  21526) |**** 
+Info: [ 21526,  22638) | 
+Info: [ 22638,  23750) |***** 
+Info: [ 23750,  24862) |********************** 
+Info: [ 24862,  25974) |***** 
+Info: [ 25974,  27086) |* 
+Info: [ 27086,  28198) |** 
+Info: [ 28198,  29310) |* 
+Info: [ 29310,  30422) |* 
+Info: [ 30422,  31534) |** 
+Info: [ 31534,  32646) |* 
+Info: Checksum: 0xb978deb4
+Info: Find global nets...
+Info: Routing globals...
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 143 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:        162 |        5        157 |    5   157 |         0|       0.15       0.15|
+Info: Routing complete.
+Info: Router1 time 0.15s
+Info: Checksum: 0x6f602b22
+
+Info: Critical path report for cross-domain path '<async>' -> '<async>':
+Info: curr total
+Info:  0.0  0.0  Source encoder.x0_IBUF_O$iob.O
+Info: 13.5 13.5    Net codeword[2] budget 37.037037 ns (10,28) -> (36,1)
+Info:                Sink error_injector.error_injected_word_MUX2_LUT6_O_2_I1_MUX2_LUT5_O_I1_LUT4_F_LC.D
+Info:                Defined in:
+Info:                  ../design/module_top.sv:28.28-32.6
+Info:                  ../design/module_error_injection.sv:2.24-2.36
+Info:  0.6 14.1  Source error_injector.error_injected_word_MUX2_LUT6_O_2_I1_MUX2_LUT5_O_I1_LUT4_F_LC.F
+Info:  0.3 14.5    Net error_injector.error_injected_word_MUX2_LUT6_O_2_I1_MUX2_LUT5_O_I1 budget 8.852009 ns (36,1) -> (36,1)
+Info:                Sink error_injector.error_injected_word_MUX2_LUT6_O_2_I1_MUX2_LUT5_O_LC.I1
+Info:                Defined in:
+Info:                  c:\Users\Daniel\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_map.v:159.41-159.66
+Info:                  c:\Users\Daniel\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_map.v:151.13-151.15
+Info:  0.2 14.6  Source error_injector.error_injected_word_MUX2_LUT6_O_2_I1_MUX2_LUT5_O_LC.OF
+Info:  0.3 15.0    Net error_injector.error_injected_word_MUX2_LUT6_O_2_I1 budget 8.852009 ns (36,1) -> (36,1)
+Info:                Sink error_injector.error_injected_word_MUX2_LUT6_O_2_LC.I1
+Info:                Defined in:
+Info:                  c:\Users\Daniel\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_map.v:157.13-157.15
+Info:  0.4 15.3  Source error_injector.error_injected_word_MUX2_LUT6_O_2_LC.OF
+Info:  1.8 17.1    Net final_word[1] budget 8.852009 ns (36,1) -> (40,0)
+Info:                Sink salida_OBUF_O_5$iob.I
+Info:                Defined in:
+Info:                  ../design/module_top.sv:17.17-17.32
+Info: 1.2 ns logic, 15.9 ns routing
+
+Info: Max delay <async> -> <async>: 17.08 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 19957,  20668) |**** 
+Info: [ 20668,  21379) | 
+Info: [ 21379,  22090) |** 
+Info: [ 22090,  22801) |****** 
+Info: [ 22801,  23512) |*********** 
+Info: [ 23512,  24223) |************* 
+Info: [ 24223,  24934) |************* 
+Info: [ 24934,  25645) |******* 
+Info: [ 25645,  26356) |** 
+Info: [ 26356,  27067) |******** 
+Info: [ 27067,  27778) |******** 
+Info: [ 27778,  28489) | 
+Info: [ 28489,  29200) |****** 
+Info: [ 29200,  29911) |***************** 
+Info: [ 29911,  30622) |***** 
+Info: [ 30622,  31333) |******* 
+Info: [ 31333,  32044) |* 
+Info: [ 32044,  32755) |* 
+Info: [ 32755,  33466) |* 
+Info: [ 33466,  34177) |** 
+
+Info: Program finished normally.

@@ -1,0 +1,77 @@
+IO_LOC  "salida[6]" 76;
+IO_PORT "salida[6]" IO_TYPE=LVCMOS33;
+
+IO_LOC  "salida[5]" 75;
+IO_PORT "salida[5]" IO_TYPE=LVCMOS33;
+
+IO_LOC  "salida[4]" 74;
+IO_PORT "salida[4]" IO_TYPE=LVCMOS33;
+
+IO_LOC  "salida[3]" 73;
+IO_PORT "salida[3]" IO_TYPE=LVCMOS33;
+
+IO_LOC  "salida[2]" 72;
+IO_PORT "salida[2]" IO_TYPE=LVCMOS33;
+
+IO_LOC  "salida[1]" 71;
+IO_PORT "salida[1]" IO_TYPE=LVCMOS33;
+
+IO_LOC  "salida[0]" 70;
+IO_PORT "salida[0]" IO_TYPE=LVCMOS33;
+
+IO_LOC  "switch[3]" 28;
+IO_PORT "switch[3]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "switch[2]" 27;
+IO_PORT "switch[2]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "switch[1]" 26;
+IO_PORT "switch[1]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "switch[0]" 25;
+IO_PORT "switch[0]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "pos_error[0]" 34;
+IO_PORT "pos_error[0]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "pos_error[1]" 40;
+IO_PORT "pos_error[1]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "pos_error[2]" 41;
+IO_PORT "pos_error[2]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "anodo_p0[0]" 69;
+IO_PORT "anodo_p0[0]" IO_TYPE=LVCMOS33;
+
+IO_LOC  "catodo_p0[6]" 68;
+IO_PORT "catodo_p0[6]" IO_TYPE=LVCMOS33;
+
+IO_LOC  "catodo_p0[5]" 57;
+IO_PORT "catodo_p0[5]" IO_TYPE=LVCMOS33;
+
+IO_LOC  "catodo_p0[4]" 56;
+IO_PORT "catodo_p0[4]" IO_TYPE=LVCMOS33;
+
+IO_LOC  "catodo_p0[3]" 55;
+IO_PORT "catodo_p0[3]" IO_TYPE=LVCMOS33;
+
+IO_LOC  "catodo_p0[2]" 54;
+IO_PORT "catodo_p0[2]" IO_TYPE=LVCMOS33;
+
+IO_LOC  "catodo_p0[1]" 53;
+IO_PORT "catodo_p0[1]" IO_TYPE=LVCMOS33;
+
+IO_LOC  "catodo_p0[0]" 51;
+IO_PORT "catodo_p0[0]" IO_TYPE=LVCMOS33;
+
+IO_LOC  "led[0]" 10;
+IO_PORT "led[0]" DRIVE=8 IO_TYPE=LVCMOS18;
+
+IO_LOC  "led[1]" 11;
+IO_PORT "led[1]" DRIVE=8 IO_TYPE=LVCMOS18;
+
+IO_LOC  "led[2]" 13;
+IO_PORT "led[2]" DRIVE=8 IO_TYPE=LVCMOS18;
+
+IO_LOC  "led[3]" 14;
+IO_PORT "led[3]" DRIVE=8 IO_TYPE=LVCMOS18;
