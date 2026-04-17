@@ -174,12 +174,89 @@ endmodule
 Este bloque final integra cada uno de los módulos anteriores dandoles la entrada de datos correspondientes y extrayendo los resultados necesarios (los bits de pariedad no son datos necesarios) que después seran empleados por la FPGA para transmitirlos a la parte receptora y al 7 segmentos.
 La parte receptora recibira el mensaje emcriptado mientras que el 7 segmentos muestra el mensaje original.
 
-# 3. Consumo de recursos
+## 4. Ejemplo de simplificación de las ecuaciones booleanas usadas para los 7 segmentos
+
+Para la visualización de la palabra de entrada se utilizó el módulo `module_bin_to_hexa`, cuyo objetivo es convertir una entrada binaria de 4 bits en una salida de 7 bits correspondiente al valor hexadecimal mostrado en el display.
+
+En el código, esta conversión se implementó mediante asignaciones directas para las 16 combinaciones posibles de entrada:
+
+```systemverilog
+ assign hex_output = (binary_input == 4'b0000) ? 7'b0111111 : // 0
+    (binary_input == 4'b0001) ? 7'b0000110 : // 1
+    (binary_input == 4'b0010) ? 7'b1011011 : // 2
+    (binary_input == 4'b0011) ? 7'b1001111 : // 3
+    (binary_input == 4'b0100) ? 7'b1100110 : // 4
+    (binary_input == 4'b0101) ? 7'b1101101 : // 5
+    (binary_input == 4'b0110) ? 7'b1111101 : // 6
+    (binary_input == 4'b0111) ? 7'b0000111 : // 7
+    (binary_input == 4'b1000) ? 7'b1111111 : // 8
+    (binary_input == 4'b1001) ? 7'b1101111 : // 9
+    (binary_input == 4'b1010) ? 7'b1110111 : // A
+    (binary_input == 4'b1011) ? 7'b1111100 : // b
+    (binary_input == 4'b1100) ? 7'b0111001 : // C
+    (binary_input == 4'b1101) ? 7'b1011110 : // d
+    (binary_input == 4'b1110) ? 7'b1111001 : // E
+    (binary_input == 4'b1111) ? 7'b1110001 : // F
+                              7'b0000000;    
+
+```
+Como ejemplo, se toma el segmento "a" del display. Sea la entrada de 4 bits:
+
+A B C D
+
+donde A es el bit más significativo y D el menos significativo.
+
+Para la codificación usada en el módulo, el segmento "a" se encuentra encendido para los símbolos:
+
+0, 2, 3, 5, 6, 7, 8, 9, A, b, C, d, E y F
+
+y apagado para:
+
+1 y 4
+
+Tomando esta tabla de verdad, la función del segmento a puede escribirse como:
+
+a(A,B,C,D) = Σm(0, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+
+Una forma simplificada de esta ecuación es:
+
+a = A + B + C + D'
+
+
+Esto puede comprobarse fácilmente porque el segmento a solo se apaga cuando la entrada corresponde a 0001 o 0100, es decir, cuando hay exactamente ciertas combinaciones donde D = 1 o donde ninguno de los términos anteriores activa el segmento. Por lo tanto, la ecuación simplificada permite representar correctamente el comportamiento del segmento sin necesidad de evaluar los 16 casos por separado.
+
+
+Esto garantiza que si error_position = 000, la palabra se transmite sin error. Y si error_position toma otro valor, se altera únicamente un bit de la palabra codificada.
+
+## 4.1 Ejemplo de simulación
+Uno de los casos de prueba utilizados fue:
+switch     = 1011
+pos_error  = 000
+Con esta entrada, el sistema genera primero la palabra codificada Hamming correspondiente. Para 1011, el resultado obtenido fue:
+encoded_word = 0110011
+Como pos_error = 000, la salida del módulo de error permanece igual:
+salida = 0110011
+
+Además, el display muestra la palabra de entrada 1011 en hexadecimal, es decir, la letra b.
+
+Otro caso de prueba utilizado fue:
+switch     = 1011
+pos_error  = 001
+
+En este caso, la palabra codificada original era:
+0110011
+
+y al aplicar error en la posición 001, se invierte el bit 0, obteniéndose:
+0110010
+Esto permitió verificar que el módulo de inyección de error estaba funcionando correctamente y que solo alteraba la posición indicada.
+
+
+# 6. Consumo de recursos
 <img width="402" height="464" alt="image" src="https://github.com/user-attachments/assets/99f24125-f789-42e4-a896-51e901710742" />
 
 El proceso de síntesis del diseño en la FPGA refleja una implementación altamente eficiente y de naturaleza puramente combinacional. De acuerdo con las estadísticas obtenidas, el sistema requiere un total de 27 tablas de búsqueda (LUTs) y 9 multiplexores de jerarquía superior (MUX2) para ejecutar la lógica del codificador Hamming y la decodificación de los displays, lo cual representa un uso mínimo de los recursos lógicos del dispositivo. Cabe destacar la ausencia de Flip-Flops (FFs) y bloques de memoria, lo que confirma que el flujo de datos no depende de un reloj secuencial, minimizando así la latencia de procesamiento.
 
-# 4. Problemas encontrados durante el proyecto
+# 7. Problemas encontrados durante el proyecto
 ### Curva de aprendizaje: 
 La principal dificultad se encontró en la curva de aprendizaje que conlleva aprender a programar en un nuevo lenguaje y que, además, es HDL, en anteriores cursos solo se habia realizado trabajo con software software. La solución para esto fue buscar recursos en interne como lo son vídeos y foros, aunado a esto se empleo el libro de texto, así como la gran ayuda del asistente del curso que sacó tiempo personal para aclarar dudas y ayudarnos a resolver problemas de la implemenación.
 
@@ -191,7 +268,7 @@ Este error fue el que más nos molestó durante la realización del proyecto; du
 Desconocemos la razón de porqué este pin causaba el error.
 
 
-# 5. Oscilador en anillos 
+# 8. Oscilador en anillos 
 ## Descripción
 A su vez, se trabajó en la implementación de un oscilador en anillos usando una compuerta NOT 74LS04. Esto con el objetivo de relacionar el periodo de oscilación medido con el retardo de propagación promedio de los inversores. Las indicaciones eran que se debe armar el oscilador con el mínimo de alambrado posible, medir la frecuencia con el osciloscopio, estimar el tiempo de propagación promedio, repetir el experimento con tres inversores, insertar aproximadamente un metro de alambre y finalmente analizar el caso de un solo inversor realimentado.
 
