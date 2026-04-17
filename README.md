@@ -248,7 +248,7 @@ El flujo del sistema es el siguiente:
 2. Esa palabra se envía al módulo module_encoder, donde se genera la palabra codificada Hamming de 7 bits.
 3. Luego, la palabra codificada pasa al módulo module_error_injection, que puede dejarla igual o invertir uno de sus bits según la posición seleccionada.
 4. Finalmente, el sistema muestra la palabra original en el display de 7 segmentos y envía la palabra transmitida corregida o alterada por la salida salida.
-### 4.1 Funcionamiento del codificador
+### 5.1 Funcionamiento del codificador
 En module_encoder, la palabra de entrada se separa de la siguiente forma:
 ```systemverilog
 
@@ -268,7 +268,7 @@ assign encoded_word = {x3, x2, x1, y3, x0, y2, y1};
 ```
 De esta forma, el sistema toma los 4 bits originales y genera una palabra Hamming de 7 bits.
 
-### 4.1 Funcionamiento del generador de error
+### 5.2 Funcionamiento del generador de error
 El módulo module_error_injection recibe la palabra codificada y un valor de 3 bits llamado error_position.
 
 Su lógica consiste en copiar primero la palabra original:
@@ -296,7 +296,7 @@ Por ejemplo se tiene que:
 
 Esto garantiza que si error_position = 000, la palabra se transmite sin error. Y si error_position toma otro valor, se altera únicamente un bit de la palabra codificada.
 
-### 4.2 Ejemplo de simulación
+### 5.3 Ejemplo de simulación
 Uno de los casos de prueba utilizados fue:
 ```systemverilog
 
@@ -330,7 +330,7 @@ y al aplicar error en la posición 001, se invierte el bit 0, obteniéndose:
 ```
 Esto permitió verificar que el módulo de inyección de error estaba funcionando correctamente y que solo alteraba la posición indicada.
 
-### 4.3 Análisis de la simulación
+### 5.4 Análisis de la simulación
 La simulación funcional permitió confirmar varios aspectos importantes del sistema:
 
 1. El módulo module_encoder genera correctamente la palabra Hamming de 7 bits a partir de la entrada de 4 bits.
@@ -346,7 +346,7 @@ assign led = ~switch;
 ```
 Por lo que en la FPGA los LEDs funcionan como monitoreo invertido de la entrada. Esto fue útil durante las pruebas físicas, ya que permitió comprobar que la palabra leída por la FPGA coincidía con el estado de los interruptores de entrada.
 
-### 4.5 Conclusión de la simulación
+### 5.5 Conclusión de la simulación
 La simulación funcional del sistema completo permitió comprobar que el transmisor realiza correctamente la lectura de una palabra de 4 bits, su codificación mediante Hamming (7,4), la inserción opcional de un error y la salida final de la palabra transmitida. Asimismo, se verificó que el display muestra correctamente la palabra original en hexadecimal y que la lógica de inyección de error altera solamente el bit seleccionado.
 
 En conjunto, esta simulación permitió validar tanto el funcionamiento individual de los módulos como su integración dentro del diseño final.
