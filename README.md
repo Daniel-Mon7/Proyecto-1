@@ -20,7 +20,7 @@ Para lograr este proceso se generara una palabra de 4 bits generada por un dip s
 ## 2.1 Módulo 1
 ### Módulo encoder
 
-```
+```systemverilog
 module module_encoder (
     input  logic [3:0] dip_switch, // Entrada de 4 bits dados por dip_switch
     output logic [2:0] parity_bits, // Bits de paridad calculados a partir de la entrada
@@ -51,7 +51,7 @@ Al final este módulo devuelve la palabra códificada.
 ## 2.2 Módulo 2
 ### Módulo inyector de error
 
-```
+```systemverilog
 module module_error_injection (
     input  logic [6:0] encoded_word, // Entrada de 7 bits que representa la palabra codificada
     input  logic [2:0] error_position, // Entrada de 3 bits que indica la posición del bit a invertir
@@ -86,7 +86,7 @@ Cabe aclarar esté código fue creado para que cuando el dip switch este en 000 
 
 ## 2.3 Módulo 3
 ### Módulo binario a hexadecimal
-```
+```systemverilog
 module module_bin_to_hexa (
     input  logic [3:0] binary_input,// Entrada de 4 bits dados por deep_switch
     output logic [6:0] hex_output// Salida de 7 bits para el display de 7 segmentos
@@ -118,7 +118,7 @@ endmodule
 Este módulo lo que nos permite es la visualización de la palabra que estemos queriendo transmitir en un 7 segmentos, para esto primero debemos de recibir la palbra de 4 bits, seguido mendiante la sentencia assign buscaremos el caso correspondiente a la entrada, cuando ya la halla encontrado lo siguiente que hace es mandar un 1 a las posiciones del 7 segmentos que se ocupan encender, por ejemplo para el 8 se ocupan encender los 7 segmentos por lo que se envían 7 1's, si fuera el 3 se encienden los segmentos a, b, c, d y g, por lo que se envía la secuencia de 1001111.
 
 ## 2.4 Módulo top
-```
+```systemverilog
 module module_top (
     input  logic [3:0] switch,   
     input  logic [2:0] pos_error,     
@@ -236,28 +236,32 @@ El flujo del sistema es el siguiente:
 4. Finalmente, el sistema muestra la palabra original en el display de 7 segmentos y envía la palabra transmitida corregida o alterada por la salida salida.
 ### 4.1 Funcionamiento del codificador
 En module_encoder, la palabra de entrada se separa de la siguiente forma:
+```systemverilog
 
 assign {x0, x1, x2, x3} = dip_switch;
-
+```
 Luego se calculan los bits de paridad:
+```systemverilog
 
 assign y1 = x0 ^ x1 ^ x3;
 assign y2 = x0 ^ x2 ^ x3;
 assign y3 = x1 ^ x2 ^ x3;
-
+```
 y finalmente se construye la palabra codificada:
+```systemverilog
 
 assign encoded_word = {x3, x2, x1, y3, x0, y2, y1};
-
+```
 De esta forma, el sistema toma los 4 bits originales y genera una palabra Hamming de 7 bits.
 
 ### 4.1 Funcionamiento del generador de error
 El módulo module_error_injection recibe la palabra codificada y un valor de 3 bits llamado error_position.
 
 Su lógica consiste en copiar primero la palabra original:
+```systemverilog
 
 error_injected_word = encoded_word;
-
+```
 y luego, dependiendo del valor de error_position, invertir únicamente el bit seleccionado.
 
 Por ejemplo se tiene que:
@@ -280,27 +284,36 @@ Esto garantiza que si error_position = 000, la palabra se transmite sin error. Y
 
 ### 4.2 Ejemplo de simulación
 Uno de los casos de prueba utilizados fue:
+```systemverilog
+
 switch     = 1011
 pos_error  = 000
+```
 Con esta entrada, el sistema genera primero la palabra codificada Hamming correspondiente. Para 1011, el resultado obtenido fue:
 encoded_word = 0110011
 Como pos_error = 000, la salida del módulo de error permanece igual:
-salida = 0110011
+```systemverilog
 
+salida = 0110011
+```
 Además, el display muestra la palabra de entrada 1011 en hexadecimal, es decir, la letra b.
 
 Otro caso de prueba utilizado fue:
+```systemverilog
+
 switch     = 1011
 pos_error  = 001
-
+```
 En este caso, la palabra codificada original era:
+```systemverilog
 
 0110011
-
+```
 y al aplicar error en la posición 001, se invierte el bit 0, obteniéndose:
+```systemverilog
 
 0110010
-
+```
 Esto permitió verificar que el módulo de inyección de error estaba funcionando correctamente y que solo alteraba la posición indicada.
 
 ### 4.3 Análisis de la simulación
@@ -311,11 +324,12 @@ La simulación funcional permitió confirmar varios aspectos importantes del sis
 3. Para cualquier otra posición, únicamente se invierte un bit de la palabra codificada.
 4. El módulo module_bin_to_hexa representa correctamente en el display la palabra de entrada en formato hexadecimal.
 5. La salida salida contiene la palabra final transmitida, ya sea con o sin error.
-6. 
+
 Además, en module_top los LEDs se asignan como:
+```systemverilog
 
 assign led = ~switch;
-
+```
 Por lo que en la FPGA los LEDs funcionan como monitoreo invertido de la entrada. Esto fue útil durante las pruebas físicas, ya que permitió comprobar que la palabra leída por la FPGA coincidía con el estado de los interruptores de entrada.
 
 ### 4.5 Conclusión de la simulación
@@ -341,19 +355,19 @@ Desconocemos la razón de porqué este pin causaba el error.
 
 
 # 8. Oscilador en anillos 
-## Descripción
+## 8.1.1 Descripción
 A su vez, se trabajó en la implementación de un oscilador en anillos usando una compuerta NOT 74LS04. Esto con el objetivo de relacionar el periodo de oscilación medido con el retardo de propagación promedio de los inversores. Las indicaciones eran que se debe armar el oscilador con el mínimo de alambrado posible, medir la frecuencia con el osciloscopio, estimar el tiempo de propagación promedio, repetir el experimento con tres inversores, insertar aproximadamente un metro de alambre y finalmente analizar el caso de un solo inversor realimentado.
 
-## Diagrama de la compuerta 74LS04
+## 8.1.2 Diagrama de la compuerta 74LS04
 ![Diagrama 74LS04](doc/74LS04.png)
 
-## Oscilador con 5 inversores
+## 8.1.3 Oscilador con 5 inversores
 Tal y como indica el título, se conectaron las 5 compuertas NOT retroaliméntandose entre sí para formar el anillo, tomando en consideración los pines de alimentación y salida a tierra. 
 
-## Salida del Osciloscopio
+## 8.1.4 Salida del Osciloscopio
 ![Oscilador con 5 inversores](doc/5_not.PNG)
 
-## Cálculo para los 5 NOT
+## 8.1.5 Cálculo para los 5 NOT
 
 La frecuencia medida fue de:
 
@@ -379,16 +393,16 @@ Se obtiene:
 
 `t_p ≈ 9.40 ns`
 
-# Conclusión
+# 8.1.6 Conclusión
 A partir de la frecuencia medida de 10.64 MHz, se obtuvo un período de aproximadamente 93.98 ns. Usando la relación del oscilador en anillo con 5 inversores, se estimó un retardo de propagación promedio de 9.40 ns por compuerta NOT. Este resultado confirma que la oscilación del circuito está directamente asociada a la suma de los retardos de propagación de los inversores que conforman el anillo.
 
-## Oscilador con 3 inversores
+## 8.2 Oscilador con 3 inversores
 De la misma manera se conectaron las 3 compuertas NOT retroalimentándose entre sí para formar el anillo.
 
-## Salida del Osciloscopio
+## 8.2.1 Salida del Osciloscopio
 ![Oscilador con 3 inversores](doc/3_not.PNG)
 
-## Cálculo para los 3 NOT
+## 8.2.2 Cálculo para los 3 NOT
 
 La frecuencia medida fue de:
 
@@ -414,16 +428,16 @@ Se obtiene:
 
 `t_p ≈ 9.30 ns`
 
-# Conclusión
+# 8.2.3 Conclusión
 A partir de la frecuencia medida de 17.93 MHz, se obtuvo un período de aproximadamente 55.77 ns. Usando la relación del oscilador en anillo con 3 inversores, se estimó un retardo de propagación promedio de 9.30 ns por compuerta NOT. Este resultado es consistente con el obtenido para el oscilador de 5 inversores, lo cual confirma que el retardo de propagación promedio de cada inversor se mantiene aproximadamente constante y que el cambio en el período total depende principalmente de la cantidad de etapas presentes en el anillo.
 
-## Oscilador con 3 inversores y cable de aproximadamente 3 metros
+## 8.3 Oscilador con 3 inversores y cable de aproximadamente 3 metros
 Para esta prueba, se utilizó el oscilador en anillo con 3 compuertas NOT y se añadió un cable de aproximadamente 3 metros. Esto permitió observar cómo la longitud adicional del conductor afecta el comportamiento de la señal debido al aumento de efectos de la capacitancia e inductancia.
 
-## Salida del Osciloscopio
+## 8.3.1 Salida del Osciloscopio
 ![Oscilador con 3 inversores y cable de 3 metros](doc/3_not_3metros.PNG)
 
-## Cálculo para los 3 NOT con cable de 3 metros
+## 8.3.2 Cálculo para los 3 NOT con cable de 3 metros
 
 La frecuencia medida fue de:
 
@@ -449,20 +463,20 @@ Se obtiene:
 
 `t_p ≈ 16.52 ns`
 
-# Conclusión
+# 8.3.3 Conclusión
 A partir de la frecuencia medida de 10.09 MHz, se obtuvo un período de aproximadamente 99.11 ns. Usando la relación del oscilador en anillo con 3 inversores, se estimó un retardo de propagación promedio de 16.52 ns por compuerta NOT. Este valor es mayor al obtenido sin el cable adicional, lo cual indica que la longitud extra del conductor introdujo efectos parásitos que aumentaron el retardo total del circuito y redujeron la frecuencia de oscilación.
 
-## Análisis para 1 inversor
+## 8.4 Análisis para 1 inversor
 En esta prueba se tomó una sola compuerta NOT del 74LS04 y se conectó su salida directamente a su entrada. A diferencia del oscilador en anillo con 3 o 5 inversores, esta configuración no establece una oscilación periódica bien definida, por lo que no se obtiene una frecuencia estable para realizar cálculos como en los casos anteriores.
 
 El comportamiento observado se debe a que el inversor intenta realimentarse a sí mismo. Como la salida depende de la entrada y, al mismo tiempo, la entrada depende de la salida en un bucle, el circuito tiende a ubicarse cerca del punto de transición entre los niveles lógicos bajo y alto. En esa región, pequeñas perturbaciones de ruido o variaciones internas pueden producir una señal de baja amplitud o comportamiento inestable.
 
 
-## Señal observada en el osciloscopio
+## 8.4.1 Señal observada en el osciloscopio
 ![Respuesta con un solo inversor](doc/1_not.PNG)
 
-## Interpretación del resultado
+## 8.4.2 Interpretación del resultado
 A diferencia de un oscilador en anillo con un número impar de etapas, un único inversor realimentado no produce una oscilación útil y estable para caracterización temporal. En cambio, la señal queda dominada por el punto de operación del inversor, el ruido presente en el circuito y las pequeñas capacitancias parásitas del montaje.
 
-# Conclusión
+# 8.4.3 Conclusión
 Con un solo inversor realimentado no se forma un oscilador funcional como tal, por lo que no es posible asociar una frecuencia de oscilación definida ni calcular un retardo de propagación de la misma forma que en los montajes con 3 o 5 inversores. El resultado principal de esta prueba es evidenciar que el inversor puede quedar polarizado cerca de su umbral de conmutación, mostrando una señal sensible al ruido y a los efectos parásitos del circuito.
