@@ -232,3 +232,38 @@ Se obtiene:
 
 # Conclusión
 A partir de la frecuencia medida de 10.64 MHz, se obtuvo un período de aproximadamente 93.98 ns. Usando la relación del oscilador en anillo con 5 inversores, se estimó un retardo de propagación promedio de 9.40 ns por compuerta NOT. Este resultado confirma que la oscilación del circuito está directamente asociada a la suma de los retardos de propagación de los inversores que conforman el anillo.
+
+## Oscilador con 3 inversores
+De la misma manera se conectaron las 3 compuertas NOT retroalimentándose entre sí para formar el anillo.
+
+## Salida del Osciloscopio
+![Oscilador con 3 inversores](doc/3_not.PNG)
+
+## Cálculo para los 3 NOT
+
+La frecuencia medida fue de:
+
+`f = 17.93 MHz`
+
+`T = 1/f = 1 / 17.93 MHz ≈ 55.77 ns`
+
+Para un oscilador en anillo:
+
+`T = 2N t_p`
+
+`t_p = T / (2N)`
+
+Como se utilizan 3 NOT's:
+
+`N = 3`
+
+Se obtiene:
+
+`t_p = 55.77 ns / (2·3)`
+
+`t_p = 55.77 ns / 6`
+
+`t_p ≈ 9.30 ns`
+
+# Conclusión
+A partir de la frecuencia medida de 17.93 MHz, se obtuvo un período de aproximadamente 55.77 ns. Usando la relación del oscilador en anillo con 3 inversores, se estimó un retardo de propagación promedio de 9.30 ns por compuerta NOT. Este resultado es consistente con el obtenido para el oscilador de 5 inversores, lo cual confirma que el retardo de propagación promedio de cada inversor se mantiene aproximadamente constante y que el cambio en el período total depende principalmente de la cantidad de etapas presentes en el anillo.
