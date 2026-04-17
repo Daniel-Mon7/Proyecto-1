@@ -190,3 +190,12 @@ Como tal el módulo de inserción de error no es muy complicado, sin embargo, a 
 Este error fue el que más nos molestó durante la realización del proyecto; durante una semana estuvimos intentando corregirlo sin éxito, sin embargo a menos de dos minutos de la entrega hicimos un cambio en los constraints, específicamente en el pin donde entraba el error, lo movimos del pin 35 al 41 y se arregló el error.
 Desconocemos la razón de porqué este pin causaba el error.
 
+
+# 5. Oscilador en anillos 
+## Descripción
+A su vez, se trabajó en la implementación de un oscilador en anillos usando una compuerta NOT 74LS04. Esto con el objetivo de relacionar el periodo de oscilación medido con el retardo de propagación promedio de los inversores. Las indicaciones eran que se debe armar el oscilador con el mínimo de alambrado posible, medir la frecuencia con el osciloscopio, estimar el tiempo de propagación promedio, repetir el experimento con tres inversores, insertar aproximadamente un metro de alambre y finalmente analizar el caso de un solo inversor realimentado.
+
+## Oscilador con 5 inversores
+Tal y como indica el título, se conectaron las 5 compuertas NOT retroaliméntandose entre sí para formar el anillo. 
+
+
