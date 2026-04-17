@@ -267,3 +267,39 @@ Se obtiene:
 
 # Conclusión
 A partir de la frecuencia medida de 17.93 MHz, se obtuvo un período de aproximadamente 55.77 ns. Usando la relación del oscilador en anillo con 3 inversores, se estimó un retardo de propagación promedio de 9.30 ns por compuerta NOT. Este resultado es consistente con el obtenido para el oscilador de 5 inversores, lo cual confirma que el retardo de propagación promedio de cada inversor se mantiene aproximadamente constante y que el cambio en el período total depende principalmente de la cantidad de etapas presentes en el anillo.
+
+## Oscilador con 3 inversores y cable de aproximadamente 3 metros
+Para esta prueba, se utilizó el oscilador en anillo con 3 compuertas NOT y se añadió un cable de aproximadamente 3 metros. Esto permitió observar cómo la longitud adicional del conductor afecta el comportamiento de la señal debido al aumento de efectos de la capacitancia e inductancia.
+
+## Salida del Osciloscopio
+![Oscilador con 3 inversores y cable de 3 metros](doc/3_not_3metros.PNG)
+
+## Cálculo para los 3 NOT con cable de 3 metros
+
+La frecuencia medida fue de:
+
+`f = 10.09 MHz`
+
+`T = 1/f = 1 / 10.09 MHz ≈ 99.11 ns`
+
+Para un oscilador en anillo:
+
+`T = 2N t_p`
+
+`t_p = T / (2N)`
+
+Como se utilizan 3 NOT's:
+
+`N = 3`
+
+Se obtiene:
+
+`t_p = 99.11 ns / (2·3)`
+
+`t_p = 99.11 ns / 6`
+
+`t_p ≈ 16.52 ns`
+
+# Conclusión
+A partir de la frecuencia medida de 10.09 MHz, se obtuvo un período de aproximadamente 99.11 ns. Usando la relación del oscilador en anillo con 3 inversores, se estimó un retardo de propagación promedio de 16.52 ns por compuerta NOT. Este valor es mayor al obtenido sin el cable adicional, lo cual indica que la longitud extra del conductor introdujo efectos parásitos que aumentaron el retardo total del circuito y redujeron la frecuencia de oscilación.
+
