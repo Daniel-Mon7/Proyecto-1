@@ -204,36 +204,40 @@ Como ejemplo, se toma el segmento "a" del display.
 #### Ejemplo de Display del 7 segmentos
 ![Display del 7 segmentos](doc/7_segmentos.png)
 
+Para la salida hexadecimal se tiene este otro ejemplo
+
+![Display del 7 segmentos hexadecimal](doc/7_segmentos_hexadecimal.png)
+
 
 Sea la entrada de 4 bits:
-```systemverilog
+```
 
 A B C D
 ```
 donde A es el bit más significativo y D el menos significativo.
 
 Para la codificación usada en el módulo, el segmento "a" se encuentra encendido para los símbolos:
-```systemverilog
+```
 
-0, 2, 3, 5, 6, 7, 8, 9, A, b, C, d, E y F
+0, 2, 3, 5, 6, 7, 8, 9, A, C, E y F
 ```
 y apagado para:
-```systemverilog
+```
 
-1 y 4
+1, 4, b y d
 ```
 Tomando esta tabla de verdad, la función del segmento a puede escribirse como:
-```systemverilog
+```
 
-a(A,B,C,D) = Σm(0, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+a(A,B,C,D) = Σm(0, 2, 3, 5, 6, 7, 8, 9, 10, 12, 14, 15)
 ```
 Una forma simplificada de esta ecuación es:
-```systemverilog
-
-a = A + B + C + D'
 ```
 
-Esto puede comprobarse fácilmente porque el segmento a solo se apaga cuando la entrada corresponde a 0001 o 0100, es decir, cuando hay exactamente ciertas combinaciones donde D = 1 o donde ninguno de los términos anteriores activa el segmento. Por lo tanto, la ecuación simplificada permite representar correctamente el comportamiento del segmento sin necesidad de evaluar los 16 casos por separado.
+a = B'D' + BD + AC' + A'C
+```
+
+Esto puede comprobarse observando que el segmento `a` únicamente permanece apagado para las entradas correspondientes a `1`, `4`, `b` y `d`, es decir, para `0001`, `0100`, `1011` y `1101`. En todas las demás combinaciones de entrada, dicho segmento debe encenderse para representar correctamente el valor hexadecimal en el display. Por esta razón, la ecuación simplificada obtenida permite describir el comportamiento del segmento `a` sin necesidad de evaluar explícitamente las 16 combinaciones posibles de la tabla de verdad.
 
 ## 5. Ejemplo y análisis de una simulación funcional del sistema completo
 Para validar el funcionamiento del transmisor completo se realizó una simulación funcional del módulo module_top, ya que este integra los principales bloques del sistema: module_encoder, module_error_injection y module_bin_to_hexa.
