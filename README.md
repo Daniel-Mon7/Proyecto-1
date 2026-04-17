@@ -174,7 +174,7 @@ endmodule
 Este bloque final integra cada uno de los módulos anteriores dandoles la entrada de datos correspondientes y extrayendo los resultados necesarios (los bits de pariedad no son datos necesarios) que después seran empleados por la FPGA para transmitirlos a la parte receptora y al 7 segmentos.
 La parte receptora recibira el mensaje emcriptado mientras que el 7 segmentos muestra el mensaje original.
 
-## 4. Ejemplo de simplificación de las ecuaciones booleanas usadas para los 7 segmentos
+## 3. Ejemplo de simplificación de las ecuaciones booleanas usadas para los 7 segmentos
 
 Para la visualización de la palabra de entrada se utilizó el módulo `module_bin_to_hexa`, cuyo objetivo es convertir una entrada binaria de 4 bits en una salida de 7 bits correspondiente al valor hexadecimal mostrado en el display.
 
@@ -239,7 +239,7 @@ a = B'D' + BD + AC' + A'C
 
 Esto puede comprobarse observando que el segmento `a` únicamente permanece apagado para las entradas correspondientes a `1`, `4`, `b` y `d`, es decir, para `0001`, `0100`, `1011` y `1101`. En todas las demás combinaciones de entrada, dicho segmento debe encenderse para representar correctamente el valor hexadecimal en el display. Por esta razón, la ecuación simplificada obtenida permite describir el comportamiento del segmento `a` sin necesidad de evaluar explícitamente las 16 combinaciones posibles de la tabla de verdad.
 
-## 5. Ejemplo y análisis de una simulación funcional del sistema completo
+## 4. Ejemplo y análisis de una simulación funcional del sistema completo
 Para validar el funcionamiento del transmisor completo se realizó una simulación funcional del módulo module_top, ya que este integra los principales bloques del sistema: module_encoder, module_error_injection y module_bin_to_hexa.
 
 El flujo del sistema es el siguiente:
@@ -248,7 +248,7 @@ El flujo del sistema es el siguiente:
 2. Esa palabra se envía al módulo module_encoder, donde se genera la palabra codificada Hamming de 7 bits.
 3. Luego, la palabra codificada pasa al módulo module_error_injection, que puede dejarla igual o invertir uno de sus bits según la posición seleccionada.
 4. Finalmente, el sistema muestra la palabra original en el display de 7 segmentos y envía la palabra transmitida corregida o alterada por la salida salida.
-### 5.1 Funcionamiento del codificador
+### 4.1 Funcionamiento del codificador
 En module_encoder, la palabra de entrada se separa de la siguiente forma:
 ```systemverilog
 
@@ -268,7 +268,7 @@ assign encoded_word = {x3, x2, x1, y3, x0, y2, y1};
 ```
 De esta forma, el sistema toma los 4 bits originales y genera una palabra Hamming de 7 bits.
 
-### 5.2 Funcionamiento del generador de error
+### 4.2 Funcionamiento del generador de error
 El módulo module_error_injection recibe la palabra codificada y un valor de 3 bits llamado error_position.
 
 Su lógica consiste en copiar primero la palabra original:
@@ -296,7 +296,7 @@ Por ejemplo se tiene que:
 
 Esto garantiza que si error_position = 000, la palabra se transmite sin error. Y si error_position toma otro valor, se altera únicamente un bit de la palabra codificada.
 
-### 5.3 Ejemplo de simulación
+### 4.3 Ejemplo de simulación
 Uno de los casos de prueba utilizados fue:
 ```systemverilog
 
@@ -330,7 +330,7 @@ y al aplicar error en la posición 001, se invierte el bit 0, obteniéndose:
 ```
 Esto permitió verificar que el módulo de inyección de error estaba funcionando correctamente y que solo alteraba la posición indicada.
 
-### 5.4 Análisis de la simulación
+### 4.4 Análisis de la simulación
 La simulación funcional permitió confirmar varios aspectos importantes del sistema:
 
 1. El módulo module_encoder genera correctamente la palabra Hamming de 7 bits a partir de la entrada de 4 bits.
@@ -346,17 +346,17 @@ assign led = ~switch;
 ```
 Por lo que en la FPGA los LEDs funcionan como monitoreo invertido de la entrada. Esto fue útil durante las pruebas físicas, ya que permitió comprobar que la palabra leída por la FPGA coincidía con el estado de los interruptores de entrada.
 
-### 5.5 Conclusión de la simulación
+### 4.5 Conclusión de la simulación
 La simulación funcional del sistema completo permitió comprobar que el transmisor realiza correctamente la lectura de una palabra de 4 bits, su codificación mediante Hamming (7,4), la inserción opcional de un error y la salida final de la palabra transmitida. Asimismo, se verificó que el display muestra correctamente la palabra original en hexadecimal y que la lógica de inyección de error altera solamente el bit seleccionado.
 
 En conjunto, esta simulación permitió validar tanto el funcionamiento individual de los módulos como su integración dentro del diseño final.
 
-# 6. Consumo de recursos
+# 5. Consumo de recursos
 <img width="402" height="464" alt="image" src="https://github.com/user-attachments/assets/99f24125-f789-42e4-a896-51e901710742" />
 
 El proceso de síntesis del diseño en la FPGA refleja una implementación altamente eficiente y de naturaleza puramente combinacional. De acuerdo con las estadísticas obtenidas, el sistema requiere un total de 27 tablas de búsqueda (LUTs) y 9 multiplexores de jerarquía superior (MUX2) para ejecutar la lógica del codificador Hamming y la decodificación de los displays, lo cual representa un uso mínimo de los recursos lógicos del dispositivo. Cabe destacar la ausencia de Flip-Flops (FFs) y bloques de memoria, lo que confirma que el flujo de datos no depende de un reloj secuencial, minimizando así la latencia de procesamiento.
 
-# 7. Problemas encontrados durante el proyecto
+# 6. Problemas encontrados durante el proyecto
 ### Curva de aprendizaje: 
 La principal dificultad se encontró en la curva de aprendizaje que conlleva aprender a programar en un nuevo lenguaje y que, además, es HDL, en anteriores cursos solo se habia realizado trabajo con software software. La solución para esto fue buscar recursos en interne como lo son vídeos y foros, aunado a esto se empleo el libro de texto, así como la gran ayuda del asistente del curso que sacó tiempo personal para aclarar dudas y ayudarnos a resolver problemas de la implemenación.
 
@@ -368,20 +368,20 @@ Este error fue el que más nos molestó durante la realización del proyecto; du
 Desconocemos la razón de porqué este pin causaba el error.
 
 
-# 8. Oscilador en anillos 
-## 8.1.1 Descripción
+# 7. Oscilador en anillos 
+## 7.1.1 Descripción
 A su vez, se trabajó en la implementación de un oscilador en anillos usando una compuerta NOT 74LS04. Esto con el objetivo de relacionar el periodo de oscilación medido con el retardo de propagación promedio de los inversores. Las indicaciones eran que se debe armar el oscilador con el mínimo de alambrado posible, medir la frecuencia con el osciloscopio, estimar el tiempo de propagación promedio, repetir el experimento con tres inversores, insertar aproximadamente un metro de alambre y finalmente analizar el caso de un solo inversor realimentado.
 
-## 8.1.2 Diagrama de la compuerta 74LS04
+## 7.1.2 Diagrama de la compuerta 74LS04
 ![Diagrama 74LS04](doc/74LS04.png)
 
-## 8.1.3 Oscilador con 5 inversores
+## 7.1.3 Oscilador con 5 inversores
 Tal y como indica el título, se conectaron las 5 compuertas NOT retroaliméntandose entre sí para formar el anillo, tomando en consideración los pines de alimentación y salida a tierra. 
 
-## 8.1.4 Salida del Osciloscopio
+## 7.1.4 Salida del Osciloscopio
 ![Oscilador con 5 inversores](doc/5_not.PNG)
 
-## 8.1.5 Cálculo para los 5 NOT
+## 7.1.5 Cálculo para los 5 NOT
 
 La frecuencia medida fue de:
 
@@ -407,16 +407,16 @@ Se obtiene:
 
 `t_p ≈ 9.40 ns`
 
-# 8.1.6 Conclusión
+# 7.1.6 Conclusión
 A partir de la frecuencia medida de 10.64 MHz, se obtuvo un período de aproximadamente 93.98 ns. Usando la relación del oscilador en anillo con 5 inversores, se estimó un retardo de propagación promedio de 9.40 ns por compuerta NOT. Este resultado confirma que la oscilación del circuito está directamente asociada a la suma de los retardos de propagación de los inversores que conforman el anillo.
 
-## 8.2 Oscilador con 3 inversores
+## 7.2 Oscilador con 3 inversores
 De la misma manera se conectaron las 3 compuertas NOT retroalimentándose entre sí para formar el anillo.
 
-## 8.2.1 Salida del Osciloscopio
+## 7.2.1 Salida del Osciloscopio
 ![Oscilador con 3 inversores](doc/3_not.PNG)
 
-## 8.2.2 Cálculo para los 3 NOT
+## 7.2.2 Cálculo para los 3 NOT
 
 La frecuencia medida fue de:
 
@@ -442,16 +442,16 @@ Se obtiene:
 
 `t_p ≈ 9.30 ns`
 
-# 8.2.3 Conclusión
+# 7.2.3 Conclusión
 A partir de la frecuencia medida de 17.93 MHz, se obtuvo un período de aproximadamente 55.77 ns. Usando la relación del oscilador en anillo con 3 inversores, se estimó un retardo de propagación promedio de 9.30 ns por compuerta NOT. Este resultado es consistente con el obtenido para el oscilador de 5 inversores, lo cual confirma que el retardo de propagación promedio de cada inversor se mantiene aproximadamente constante y que el cambio en el período total depende principalmente de la cantidad de etapas presentes en el anillo.
 
-## 8.3 Oscilador con 3 inversores y cable de aproximadamente 3 metros
+## 7.3 Oscilador con 3 inversores y cable de aproximadamente 3 metros
 Para esta prueba, se utilizó el oscilador en anillo con 3 compuertas NOT y se añadió un cable de aproximadamente 3 metros. Esto permitió observar cómo la longitud adicional del conductor afecta el comportamiento de la señal debido al aumento de efectos de la capacitancia e inductancia.
 
-## 8.3.1 Salida del Osciloscopio
+## 7.3.1 Salida del Osciloscopio
 ![Oscilador con 3 inversores y cable de 3 metros](doc/3_not_3metros.PNG)
 
-## 8.3.2 Cálculo para los 3 NOT con cable de 3 metros
+## 7.3.2 Cálculo para los 3 NOT con cable de 3 metros
 
 La frecuencia medida fue de:
 
@@ -477,20 +477,20 @@ Se obtiene:
 
 `t_p ≈ 16.52 ns`
 
-# 8.3.3 Conclusión
+# 7.3.3 Conclusión
 A partir de la frecuencia medida de 10.09 MHz, se obtuvo un período de aproximadamente 99.11 ns. Usando la relación del oscilador en anillo con 3 inversores, se estimó un retardo de propagación promedio de 16.52 ns por compuerta NOT. Este valor es mayor al obtenido sin el cable adicional, lo cual indica que la longitud extra del conductor introdujo efectos parásitos que aumentaron el retardo total del circuito y redujeron la frecuencia de oscilación.
 
-## 8.4 Análisis para 1 inversor
+## 7.4 Análisis para 1 inversor
 En esta prueba se tomó una sola compuerta NOT del 74LS04 y se conectó su salida directamente a su entrada. A diferencia del oscilador en anillo con 3 o 5 inversores, esta configuración no establece una oscilación periódica bien definida, por lo que no se obtiene una frecuencia estable para realizar cálculos como en los casos anteriores.
 
 El comportamiento observado se debe a que el inversor intenta realimentarse a sí mismo. Como la salida depende de la entrada y, al mismo tiempo, la entrada depende de la salida en un bucle, el circuito tiende a ubicarse cerca del punto de transición entre los niveles lógicos bajo y alto. En esa región, pequeñas perturbaciones de ruido o variaciones internas pueden producir una señal de baja amplitud o comportamiento inestable.
 
 
-## 8.4.1 Señal observada en el osciloscopio
+## 7.4.1 Señal observada en el osciloscopio
 ![Respuesta con un solo inversor](doc/1_not.PNG)
 
-## 8.4.2 Interpretación del resultado
+## 7.4.2 Interpretación del resultado
 A diferencia de un oscilador en anillo con un número impar de etapas, un único inversor realimentado no produce una oscilación útil y estable para caracterización temporal. En cambio, la señal queda dominada por el punto de operación del inversor, el ruido presente en el circuito y las pequeñas capacitancias parásitas del montaje.
 
-# 8.4.3 Conclusión
+# 7.4.3 Conclusión
 Con un solo inversor realimentado no se forma un oscilador funcional como tal, por lo que no es posible asociar una frecuencia de oscilación definida ni calcular un retardo de propagación de la misma forma que en los montajes con 3 o 5 inversores. El resultado principal de esta prueba es evidenciar que el inversor puede quedar polarizado cerca de su umbral de conmutación, mostrando una señal sensible al ruido y a los efectos parásitos del circuito.
