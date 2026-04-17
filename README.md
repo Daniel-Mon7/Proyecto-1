@@ -201,6 +201,9 @@ En el código, esta conversión se implementó mediante asignaciones directas pa
 
 ```
 Como ejemplo, se toma el segmento "a" del display. 
+#### Display del 7 segmentos
+![Display del 7 segmentos](doc/5_not.PNG)
+
 
 Sea la entrada de 4 bits:
 ```systemverilog
