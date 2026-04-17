@@ -303,3 +303,17 @@ Se obtiene:
 # Conclusión
 A partir de la frecuencia medida de 10.09 MHz, se obtuvo un período de aproximadamente 99.11 ns. Usando la relación del oscilador en anillo con 3 inversores, se estimó un retardo de propagación promedio de 16.52 ns por compuerta NOT. Este valor es mayor al obtenido sin el cable adicional, lo cual indica que la longitud extra del conductor introdujo efectos parásitos que aumentaron el retardo total del circuito y redujeron la frecuencia de oscilación.
 
+## Análisis para 1 inversor
+En esta prueba se tomó una sola compuerta NOT del 74LS04 y se conectó su salida directamente a su entrada. A diferencia del oscilador en anillo con 3 o 5 inversores, esta configuración no establece una oscilación periódica bien definida, por lo que no se obtiene una frecuencia estable para realizar cálculos como en los casos anteriores.
+
+El comportamiento observado se debe a que el inversor intenta realimentarse a sí mismo. Como la salida depende de la entrada y, al mismo tiempo, la entrada depende de la salida en un bucle, el circuito tiende a ubicarse cerca del punto de transición entre los niveles lógicos bajo y alto. En esa región, pequeñas perturbaciones de ruido o variaciones internas pueden producir una señal de baja amplitud o comportamiento inestable.
+
+
+## Señal observada en el osciloscopio
+![Respuesta con un solo inversor](doc/1_not.PNG)
+
+## Interpretación del resultado
+A diferencia de un oscilador en anillo con un número impar de etapas, un único inversor realimentado no produce una oscilación útil y estable para caracterización temporal. En cambio, la señal queda dominada por el punto de operación del inversor, el ruido presente en el circuito y las pequeñas capacitancias parásitas del montaje.
+
+# Conclusión
+Con un solo inversor realimentado no se forma un oscilador funcional como tal, por lo que no es posible asociar una frecuencia de oscilación definida ni calcular un retardo de propagación de la misma forma que en los montajes con 3 o 5 inversores. El resultado principal de esta prueba es evidenciar que el inversor puede quedar polarizado cerca de su umbral de conmutación, mostrando una señal sensible al ruido y a los efectos parásitos del circuito.
