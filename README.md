@@ -225,10 +225,60 @@ a = A + B + C + D'
 
 Esto puede comprobarse fácilmente porque el segmento a solo se apaga cuando la entrada corresponde a 0001 o 0100, es decir, cuando hay exactamente ciertas combinaciones donde D = 1 o donde ninguno de los términos anteriores activa el segmento. Por lo tanto, la ecuación simplificada permite representar correctamente el comportamiento del segmento sin necesidad de evaluar los 16 casos por separado.
 
+## 5. Ejemplo y análisis de una simulación funcional del sistema completo
+Para validar el funcionamiento del transmisor completo se realizó una simulación funcional del módulo module_top, ya que este integra los principales bloques del sistema: module_encoder, module_error_injection y module_bin_to_hexa.
+
+El flujo del sistema es el siguiente:
+
+1. La palabra de entrada de 4 bits se recibe en switch.
+2. Esa palabra se envía al módulo module_encoder, donde se genera la palabra codificada Hamming de 7 bits.
+3. Luego, la palabra codificada pasa al módulo module_error_injection, que puede dejarla igual o invertir uno de sus bits según la posición seleccionada.
+4. Finalmente, el sistema muestra la palabra original en el display de 7 segmentos y envía la palabra transmitida corregida o alterada por la salida salida.
+### 4.1 Funcionamiento del codificador
+En module_encoder, la palabra de entrada se separa de la siguiente forma:
+
+assign {x0, x1, x2, x3} = dip_switch;
+
+Luego se calculan los bits de paridad:
+
+assign y1 = x0 ^ x1 ^ x3;
+assign y2 = x0 ^ x2 ^ x3;
+assign y3 = x1 ^ x2 ^ x3;
+
+y finalmente se construye la palabra codificada:
+
+assign encoded_word = {x3, x2, x1, y3, x0, y2, y1};
+
+De esta forma, el sistema toma los 4 bits originales y genera una palabra Hamming de 7 bits.
+
+### 4.1 Funcionamiento del generador de error
+El módulo module_error_injection recibe la palabra codificada y un valor de 3 bits llamado error_position.
+
+Su lógica consiste en copiar primero la palabra original:
+
+error_injected_word = encoded_word;
+
+y luego, dependiendo del valor de error_position, invertir únicamente el bit seleccionado.
+
+Por ejemplo se tiene que:
+
+```systemverilog
+ // Inversión del bit en la posición indicada por error_position
+    case (error_position)
+        3'b000: error_injected_word = encoded_word;      // sin error
+        3'b001: error_injected_word[0] = ~encoded_word[0]; // Invertir bit 0
+        3'b010: error_injected_word[1] = ~encoded_word[1]; // Misma idea hasta el 7
+        3'b011: error_injected_word[2] = ~encoded_word[2];
+        3'b100: error_injected_word[3] = ~encoded_word[3];
+        3'b101: error_injected_word[4] = ~encoded_word[4];
+        3'b110: error_injected_word[5] = ~encoded_word[5];
+        3'b111: error_injected_word[6] = ~encoded_word[6]; // Invertir bit 7
+    endcase
+```
 
 Esto garantiza que si error_position = 000, la palabra se transmite sin error. Y si error_position toma otro valor, se altera únicamente un bit de la palabra codificada.
 
-## 4.1 Ejemplo de simulación
+### 4.2 Ejemplo de simulación
 Uno de los casos de prueba utilizados fue:
 switch     = 1011
 pos_error  = 000
@@ -244,12 +294,34 @@ switch     = 1011
 pos_error  = 001
 
 En este caso, la palabra codificada original era:
+
 0110011
 
 y al aplicar error en la posición 001, se invierte el bit 0, obteniéndose:
+
 0110010
+
 Esto permitió verificar que el módulo de inyección de error estaba funcionando correctamente y que solo alteraba la posición indicada.
 
+### 4.3 Análisis de la simulación
+La simulación funcional permitió confirmar varios aspectos importantes del sistema:
+
+1. El módulo module_encoder genera correctamente la palabra Hamming de 7 bits a partir de la entrada de 4 bits.
+2. El módulo module_error_injection deja intacta la palabra cuando pos_error = 000.
+3. Para cualquier otra posición, únicamente se invierte un bit de la palabra codificada.
+4. El módulo module_bin_to_hexa representa correctamente en el display la palabra de entrada en formato hexadecimal.
+5. La salida salida contiene la palabra final transmitida, ya sea con o sin error.
+6. 
+Además, en module_top los LEDs se asignan como:
+
+assign led = ~switch;
+
+Por lo que en la FPGA los LEDs funcionan como monitoreo invertido de la entrada. Esto fue útil durante las pruebas físicas, ya que permitió comprobar que la palabra leída por la FPGA coincidía con el estado de los interruptores de entrada.
+
+### 4.5 Conclusión de la simulación
+La simulación funcional del sistema completo permitió comprobar que el transmisor realiza correctamente la lectura de una palabra de 4 bits, su codificación mediante Hamming (7,4), la inserción opcional de un error y la salida final de la palabra transmitida. Asimismo, se verificó que el display muestra correctamente la palabra original en hexadecimal y que la lógica de inyección de error altera solamente el bit seleccionado.
+
+En conjunto, esta simulación permitió validar tanto el funcionamiento individual de los módulos como su integración dentro del diseño final.
 
 # 6. Consumo de recursos
 <img width="402" height="464" alt="image" src="https://github.com/user-attachments/assets/99f24125-f789-42e4-a896-51e901710742" />
