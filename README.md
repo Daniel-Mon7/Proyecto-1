@@ -196,8 +196,7 @@ Desconocemos la razón de porqué este pin causaba el error.
 A su vez, se trabajó en la implementación de un oscilador en anillos usando una compuerta NOT 74LS04. Esto con el objetivo de relacionar el periodo de oscilación medido con el retardo de propagación promedio de los inversores. Las indicaciones eran que se debe armar el oscilador con el mínimo de alambrado posible, medir la frecuencia con el osciloscopio, estimar el tiempo de propagación promedio, repetir el experimento con tres inversores, insertar aproximadamente un metro de alambre y finalmente analizar el caso de un solo inversor realimentado.
 
 ## Diagrama de la compuerta 74LS04
-<img src="doc/74LS04.PNG" alt="Diagrama de la compuerta 74LS04" width="700"> Tomado del datasheet.
-
+![Oscilador con 5 inversores](doc/74LS04.PNG)
 ## Oscilador con 5 inversores
 Tal y como indica el título, se conectaron las 5 compuertas NOT retroaliméntandose entre sí para formar el anillo, tomando en consideración los pines de alimentación y salida a tierra. 
 
