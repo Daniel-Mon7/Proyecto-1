@@ -196,11 +196,39 @@ Desconocemos la razón de porqué este pin causaba el error.
 A su vez, se trabajó en la implementación de un oscilador en anillos usando una compuerta NOT 74LS04. Esto con el objetivo de relacionar el periodo de oscilación medido con el retardo de propagación promedio de los inversores. Las indicaciones eran que se debe armar el oscilador con el mínimo de alambrado posible, medir la frecuencia con el osciloscopio, estimar el tiempo de propagación promedio, repetir el experimento con tres inversores, insertar aproximadamente un metro de alambre y finalmente analizar el caso de un solo inversor realimentado.
 
 ## Diagrama de la compuerta 74LS04
-![Oscilador con 5 inversores](doc/74LS04.PNG)
+![Diagrama 74LS04](doc/74LS04.png)
+
 ## Oscilador con 5 inversores
 Tal y como indica el título, se conectaron las 5 compuertas NOT retroaliméntandose entre sí para formar el anillo, tomando en consideración los pines de alimentación y salida a tierra. 
 
 ## Salida del Osciloscopio
+![Oscilador con 5 inversores](doc/5_not.PNG)
 
+## Cálculo para los 5 NOT
 
+La frecuencia medida fue de:
 
+`f = 10.64 MHz`
+
+`T = 1/f = 1 / 10.64 MHz ≈ 93.98 ns`
+
+Para un oscilador en anillo:
+
+`T = 2N t_p`
+
+`t_p = T / (2N)`
+
+Como se utilizan 5 NOT's:
+
+`N = 5`
+
+Se obtiene:
+
+`t_p = 93.98 ns / (2·5)`
+
+`t_p = 93.98 ns / 10`
+
+`t_p ≈ 9.40 ns`
+
+# Conclusión
+A partir de la frecuencia medida de 10.64 MHz, se obtuvo un período de aproximadamente 93.98 ns. Usando la relación del oscilador en anillo con 5 inversores, se estimó un retardo de propagación promedio de 9.40 ns por compuerta NOT. Este resultado confirma que la oscilación del circuito está directamente asociada a la suma de los retardos de propagación de los inversores que conforman el anillo.
